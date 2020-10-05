@@ -1,0 +1,67 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: content-center
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 118.31.45.29:8848
+#        namespace: 7951ac9f-2b92-4790-96db-4e3bbe75c088
+        #        server-addr: 47.98.162.206:8848
+
+  datasource:
+    url: jdbc:mysql://rm-uf654i8ok1o971a07ro.mysql.rds.aliyuncs.com:3306/content-center
+    hikari:
+      username: xuyuan
+      password: xuyuan123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# Mybatis驼峰式开启，可省略
+#mybatis:
+#  configuration:
+#    map-underscore-to-camel-case: true
+
+#Spring Boot监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+# 细粒度的配置方式，不支持全局配置文件式写法，Ribbon全局配置只能用Java代码配置
+user-center:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+#ribbon饥饿懒加载，提高首次访问的速度
+ribbon:
+  eager-load:
+    enabled: true
+    clients: user-center
+
+# feign配置日志
+logging:
+  level:
+    # feign的日志系统是建立在SpringBoot基础上的，此处一定要是debug，否则都不会打印
+    com.soft1851.content.feignclient.UserCenterFeignClient: debug
+
+# 细粒度配置
+feign:
+  client:
+    config:
+      # 想要调用的微服务名称
+      user-center:
+        loggerLevel: full
+#feign:
+#  client:
+#    config:
+#      # 全局配置
+#      default:
+#        loggerLevel: full
+

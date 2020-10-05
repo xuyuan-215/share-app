@@ -1,0 +1,27 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: user-center
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 118.31.45.29:8848
+#        namespace: 7951ac9f-2b92-4790-96db-4e3bbe75c088
+
+  #        server-addr: 47.98.162.206:8848
+  datasource:
+    url: jdbc:mysql://rm-uf654i8ok1o971a07ro.mysql.rds.aliyuncs.com:3306/user-center
+    hikari:
+      username: xuyuan
+      password: xuyuan123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
