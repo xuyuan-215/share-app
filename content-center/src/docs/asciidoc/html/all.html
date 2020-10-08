@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
-<title>Api Documentation</title>
+<title>share-app Swagger文档</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -518,105 +518,55 @@ table.CodeRay td.code>pre{padding:0}
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>Api Documentation</h1>
+<h1>share-app Swagger文档</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_overview">1. Overview</a>
 <ul class="sectlevel2">
 <li><a href="#_version_information">1.1. Version information</a></li>
-<li><a href="#_license_information">1.2. License information</a></li>
-<li><a href="#_uri_scheme">1.3. URI scheme</a></li>
-<li><a href="#_tags">1.4. Tags</a></li>
+<li><a href="#_contact_information">1.2. Contact information</a></li>
+<li><a href="#_license_information">1.3. License information</a></li>
+<li><a href="#_uri_scheme">1.4. URI scheme</a></li>
+<li><a href="#_tags">1.5. Tags</a></li>
 </ul>
 </li>
 <li><a href="#_paths">2. Resources</a>
 <ul class="sectlevel2">
-<li><a href="#_basic-error-controller_resource">2.1. Basic-error-controller</a>
+<li><a href="#_controller-hello_resource">2.1. Controller-hello</a>
 <ul class="sectlevel3">
-<li><a href="#_errorusingpost">2.1.1. error</a></li>
-<li><a href="#_errorusingget">2.1.2. error</a></li>
-<li><a href="#_errorusingput">2.1.3. error</a></li>
-<li><a href="#_errorusingdelete">2.1.4. error</a></li>
-<li><a href="#_errorusingpatch">2.1.5. error</a></li>
-<li><a href="#_errorusinghead">2.1.6. error</a></li>
-<li><a href="#_errorusingoptions">2.1.7. error</a></li>
+<li><a href="#_gethellousingget">2.1.1. getHello</a></li>
 </ul>
 </li>
-<li><a href="#_content-hello_resource">2.2. Content-hello</a>
+<li><a href="#_test-controller_resource">2.2. Test-controller</a>
 <ul class="sectlevel3">
-<li><a href="#_gethellousingget">2.2.1. getHello</a></li>
+<li><a href="#_callusercenterusingget">2.2.1. callUserCenter</a></li>
+<li><a href="#_callbyribbonusingget">2.2.2. callByRibbon</a></li>
+<li><a href="#_getinstancesusingget">2.2.3. getInstances</a></li>
+<li><a href="#_queryusingget_1">2.2.4. query</a></li>
 </ul>
 </li>
-<li><a href="#_operation-handler_resource">2.3. Operation-handler</a>
+<li><a href="#_926ac08843c1f757ae8e532b0daf7186">2.3. 公共接口</a>
 <ul class="sectlevel3">
-<li><a href="#_handleusingget">2.3.1. handle</a></li>
-<li><a href="#_handleusingget_1">2.3.2. handle</a></li>
-<li><a href="#_handleusingget_3">2.3.3. handle</a></li>
-<li><a href="#_handleusingdelete_1">2.3.4. handle</a></li>
-<li><a href="#_handleusingget_2">2.3.5. handle</a></li>
-<li><a href="#_handleusingdelete">2.3.6. handle</a></li>
-<li><a href="#_handleusingget_4">2.3.7. handle</a></li>
-<li><a href="#_handleusingget_5">2.3.8. handle</a></li>
-<li><a href="#_handleusingget_7">2.3.9. handle</a></li>
-<li><a href="#_handleusingget_6">2.3.10. handle</a></li>
-<li><a href="#_handleusingget_8">2.3.11. handle</a></li>
-<li><a href="#_handleusingget_10">2.3.12. handle</a></li>
-<li><a href="#_handleusingget_9">2.3.13. handle</a></li>
-<li><a href="#_handleusingget_11">2.3.14. handle</a></li>
-<li><a href="#_handleusingget_12">2.3.15. handle</a></li>
-<li><a href="#_handleusingget_14">2.3.16. handle</a></li>
-<li><a href="#_handleusingpost">2.3.17. handle</a></li>
-<li><a href="#_handleusingget_13">2.3.18. handle</a></li>
-<li><a href="#_handleusingget_15">2.3.19. handle</a></li>
-<li><a href="#_handleusingget_17">2.3.20. handle</a></li>
-<li><a href="#_handleusingget_16">2.3.21. handle</a></li>
-<li><a href="#_handleusingget_18">2.3.22. handle</a></li>
-<li><a href="#_handleusingpost_1">2.3.23. handle</a></li>
-<li><a href="#_handleusingget_19">2.3.24. handle</a></li>
-<li><a href="#_handleusingpost_2">2.3.25. handle</a></li>
-<li><a href="#_handleusingget_20">2.3.26. handle</a></li>
-<li><a href="#_handleusingget_21">2.3.27. handle</a></li>
+<li><a href="#_gettopnoticeusingget">2.3.1. 查询最新一条公告</a></li>
 </ul>
 </li>
-<li><a href="#_test-controller_resource">2.4. Test-controller</a>
+<li><a href="#_3ecef281a805f36ea4142625eefacc12">2.4. 分享接口</a>
 <ul class="sectlevel3">
-<li><a href="#_callusercenterusingget">2.4.1. callUserCenter</a></li>
-<li><a href="#_callbyribbonusingget">2.4.2. callByRibbon</a></li>
-<li><a href="#_getinstancesusingget">2.4.3. getInstances</a></li>
-<li><a href="#_queryusingget_1">2.4.4. query</a></li>
-</ul>
-</li>
-<li><a href="#_web-mvc-links-handler_resource">2.5. Web-mvc-links-handler</a>
-<ul class="sectlevel3">
-<li><a href="#_linksusingget">2.5.1. links</a></li>
-</ul>
-</li>
-<li><a href="#_917a6a0ad3b9cec276900e3a86586a07">2.6. 公告接口</a>
-<ul class="sectlevel3">
-<li><a href="#_gettopnoticeusingget">2.6.1. 查询最新一条公告</a></li>
-</ul>
-</li>
-<li><a href="#_3ecef281a805f36ea4142625eefacc12">2.7. 分享接口</a>
-<ul class="sectlevel3">
-<li><a href="#_getsharebyidusingget">2.7.1. 查询指定id的分享详情</a></li>
-<li><a href="#_queryusingget">2.7.2. 分享列表</a></li>
+<li><a href="#_queryusingget">2.4.1. 分享列表</a></li>
+<li><a href="#_findbyidusingget">2.4.2. 查询指定id的分享详情</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a href="#_definitions">3. Definitions</a>
 <ul class="sectlevel2">
-<li><a href="#_link">3.1. Link</a></li>
-<li><a href="#_53d375507d198e9157717964970e1987">3.2. Map«string,Link»</a></li>
-<li><a href="#_modelandview">3.3. ModelAndView</a></li>
-<li><a href="#_serviceinstance">3.4. ServiceInstance</a></li>
-<li><a href="#_uri">3.5. URI</a></li>
-<li><a href="#_userdto">3.6. UserDto</a></li>
-<li><a href="#_view">3.7. View</a></li>
-<li><a href="#_fa86f1a57d6f758a93cb33b59c015654">3.8. 公告</a></li>
-<li><a href="#_c31f48f84ef207e66a03c015a7243b43">3.9. 分享</a></li>
-<li><a href="#_b3aa729e321b5a0a8db2802fb0f94751">3.10. 分享详情，带发布人昵称</a></li>
+<li><a href="#_serviceinstance">3.1. ServiceInstance</a></li>
+<li><a href="#_uri">3.2. URI</a></li>
+<li><a href="#_userdto">3.3. UserDTO</a></li>
+<li><a href="#_fa86f1a57d6f758a93cb33b59c015654">3.4. 公告</a></li>
+<li><a href="#_c31f48f84ef207e66a03c015a7243b43">3.5. 分享</a></li>
+<li><a href="#_b3aa729e321b5a0a8db2802fb0f94751">3.6. 分享详情，带发布人昵称</a></li>
 </ul>
 </li>
 </ul>
@@ -627,50 +577,48 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="_overview"><a class="anchor" href="#_overview"></a><a class="link" href="#_overview">1. Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Api Documentation</p>
+<p>github地址:https://github.com/RRapids/Microservice-learning</p>
 </div>
 <div class="sect2">
 <h3 id="_version_information"><a class="anchor" href="#_version_information"></a><a class="link" href="#_version_information">1.1. Version information</a></h3>
 <div class="paragraph">
-<p><em>Version</em> : 1.0</p>
+<p><em>Version</em> : API V1.0</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_license_information"><a class="anchor" href="#_license_information"></a><a class="link" href="#_license_information">1.2. License information</a></h3>
+<h3 id="_contact_information"><a class="anchor" href="#_contact_information"></a><a class="link" href="#_contact_information">1.2. Contact information</a></h3>
 <div class="paragraph">
-<p><em>License</em> : Apache 2.0<br>
-<em>License URL</em> : <a href="http://www.apache.org/licenses/LICENSE-2.0" class="bare">http://www.apache.org/licenses/LICENSE-2.0</a><br>
-<em>Terms of service</em> : urn:tos</p>
+<p><em>Contact</em> : Rapids<br>
+<em>Contact Email</em> : <a href="mailto:tengfeiqaq@gmail.com">tengfeiqaq@gmail.com</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_uri_scheme"><a class="anchor" href="#_uri_scheme"></a><a class="link" href="#_uri_scheme">1.3. URI scheme</a></h3>
+<h3 id="_license_information"><a class="anchor" href="#_license_information"></a><a class="link" href="#_license_information">1.3. License information</a></h3>
 <div class="paragraph">
-<p><em>Host</em> : localhost:8001<br>
+<p><em>License</em> : Apache<br>
+<em>License URL</em> : <a href="http://www.apache.org/" class="bare">http://www.apache.org/</a><br>
+<em>Terms of service</em> : Terms of service</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_uri_scheme"><a class="anchor" href="#_uri_scheme"></a><a class="link" href="#_uri_scheme">1.4. URI scheme</a></h3>
+<div class="paragraph">
+<p><em>Host</em> : localhost:8888<br>
 <em>BasePath</em> : /</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tags"><a class="anchor" href="#_tags"></a><a class="link" href="#_tags">1.4. Tags</a></h3>
+<h3 id="_tags"><a class="anchor" href="#_tags"></a><a class="link" href="#_tags">1.5. Tags</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>basic-error-controller : Basic Error Controller</p>
-</li>
-<li>
-<p>content-hello : Content Hello</p>
-</li>
-<li>
-<p>operation-handler : Operation Handler</p>
+<p>controller-hello : Controller Hello</p>
 </li>
 <li>
 <p>test-controller : Test Controller</p>
 </li>
 <li>
-<p>web-mvc-links-handler : Web Mvc Links Handler</p>
-</li>
-<li>
-<p>公告接口 : Notice Controller</p>
+<p>公共接口 : Notice Controller</p>
 </li>
 <li>
 <p>分享接口 : Share Controller</p>
@@ -684,15 +632,15 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="_paths"><a class="anchor" href="#_paths"></a><a class="link" href="#_paths">2. Resources</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_basic-error-controller_resource"><a class="anchor" href="#_basic-error-controller_resource"></a><a class="link" href="#_basic-error-controller_resource">2.1. Basic-error-controller</a></h3>
+<h3 id="_controller-hello_resource"><a class="anchor" href="#_controller-hello_resource"></a><a class="link" href="#_controller-hello_resource">2.1. Controller-hello</a></h3>
 <div class="paragraph">
-<p>Basic Error Controller</p>
+<p>Controller Hello</p>
 </div>
 <div class="sect3">
-<h4 id="_errorusingpost"><a class="anchor" href="#_errorusingpost"></a><a class="link" href="#_errorusingpost">2.1.1. error</a></h4>
+<h4 id="_gethellousingget"><a class="anchor" href="#_gethellousingget"></a><a class="link" href="#_gethellousingget">2.1.1. getHello</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>POST /error</pre>
+<pre>GET /content/call</pre>
 </div>
 </div>
 <div class="sect4">
@@ -714,12 +662,7 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, object &gt; map</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Created</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
@@ -740,16 +683,6 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_consumes"><a class="anchor" href="#_consumes"></a><a class="link" href="#_consumes">Consumes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/json</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
 <h5 id="_produces"><a class="anchor" href="#_produces"></a><a class="link" href="#_produces">Produces</a></h5>
 <div class="ulist">
 <ul>
@@ -760,11 +693,17 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_test-controller_resource"><a class="anchor" href="#_test-controller_resource"></a><a class="link" href="#_test-controller_resource">2.2. Test-controller</a></h3>
+<div class="paragraph">
+<p>Test Controller</p>
+</div>
 <div class="sect3">
-<h4 id="_errorusingget"><a class="anchor" href="#_errorusingget"></a><a class="link" href="#_errorusingget">2.1.2. error</a></h4>
+<h4 id="_callusercenterusingget"><a class="anchor" href="#_callusercenterusingget"></a><a class="link" href="#_callusercenterusingget">2.2.1. callUserCenter</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>GET /error</pre>
+<pre>GET /test/call/hello</pre>
 </div>
 </div>
 <div class="sect4">
@@ -786,7 +725,7 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, object &gt; map</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
@@ -818,10 +757,10 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect3">
-<h4 id="_errorusingput"><a class="anchor" href="#_errorusingput"></a><a class="link" href="#_errorusingput">2.1.3. error</a></h4>
+<h4 id="_callbyribbonusingget"><a class="anchor" href="#_callbyribbonusingget"></a><a class="link" href="#_callbyribbonusingget">2.2.2. callByRibbon</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>PUT /error</pre>
+<pre>GET /test/call/ribbon</pre>
 </div>
 </div>
 <div class="sect4">
@@ -843,12 +782,7 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, object &gt; map</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Created</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
@@ -867,16 +801,6 @@ table.CodeRay td.code>pre{padding:0}
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect4">
-<h5 id="_consumes_2"><a class="anchor" href="#_consumes_2"></a><a class="link" href="#_consumes_2">Consumes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/json</code></p>
-</li>
-</ul>
-</div>
 </div>
 <div class="sect4">
 <h5 id="_produces_3"><a class="anchor" href="#_produces_3"></a><a class="link" href="#_produces_3">Produces</a></h5>
@@ -890,2960 +814,14 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect3">
-<h4 id="_errorusingdelete"><a class="anchor" href="#_errorusingdelete"></a><a class="link" href="#_errorusingdelete">2.1.4. error</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>DELETE /error</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_responses_4"><a class="anchor" href="#_responses_4"></a><a class="link" href="#_responses_4">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, object &gt; map</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>204</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_4"><a class="anchor" href="#_produces_4"></a><a class="link" href="#_produces_4">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_errorusingpatch"><a class="anchor" href="#_errorusingpatch"></a><a class="link" href="#_errorusingpatch">2.1.5. error</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>PATCH /error</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_responses_5"><a class="anchor" href="#_responses_5"></a><a class="link" href="#_responses_5">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, object &gt; map</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>204</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_consumes_3"><a class="anchor" href="#_consumes_3"></a><a class="link" href="#_consumes_3">Consumes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/json</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_produces_5"><a class="anchor" href="#_produces_5"></a><a class="link" href="#_produces_5">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_errorusinghead"><a class="anchor" href="#_errorusinghead"></a><a class="link" href="#_errorusinghead">2.1.6. error</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>HEAD /error</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_responses_6"><a class="anchor" href="#_responses_6"></a><a class="link" href="#_responses_6">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, object &gt; map</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>204</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_consumes_4"><a class="anchor" href="#_consumes_4"></a><a class="link" href="#_consumes_4">Consumes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/json</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_produces_6"><a class="anchor" href="#_produces_6"></a><a class="link" href="#_produces_6">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_errorusingoptions"><a class="anchor" href="#_errorusingoptions"></a><a class="link" href="#_errorusingoptions">2.1.7. error</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>OPTIONS /error</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_responses_7"><a class="anchor" href="#_responses_7"></a><a class="link" href="#_responses_7">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, object &gt; map</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>204</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_consumes_5"><a class="anchor" href="#_consumes_5"></a><a class="link" href="#_consumes_5">Consumes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/json</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_produces_7"><a class="anchor" href="#_produces_7"></a><a class="link" href="#_produces_7">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_content-hello_resource"><a class="anchor" href="#_content-hello_resource"></a><a class="link" href="#_content-hello_resource">2.2. Content-hello</a></h3>
-<div class="paragraph">
-<p>Content Hello</p>
-</div>
-<div class="sect3">
-<h4 id="_gethellousingget"><a class="anchor" href="#_gethellousingget"></a><a class="link" href="#_gethellousingget">2.2.1. getHello</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /content/call</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_responses_8"><a class="anchor" href="#_responses_8"></a><a class="link" href="#_responses_8">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_8"><a class="anchor" href="#_produces_8"></a><a class="link" href="#_produces_8">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_operation-handler_resource"><a class="anchor" href="#_operation-handler_resource"></a><a class="link" href="#_operation-handler_resource">2.3. Operation-handler</a></h3>
-<div class="paragraph">
-<p>Operation Handler</p>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget"><a class="anchor" href="#_handleusingget"></a><a class="link" href="#_handleusingget">2.3.1. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/archaius</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters"><a class="anchor" href="#_parameters"></a><a class="link" href="#_parameters">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_9"><a class="anchor" href="#_responses_9"></a><a class="link" href="#_responses_9">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_9"><a class="anchor" href="#_produces_9"></a><a class="link" href="#_produces_9">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_1"><a class="anchor" href="#_handleusingget_1"></a><a class="link" href="#_handleusingget_1">2.3.2. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/beans</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_2"><a class="anchor" href="#_parameters_2"></a><a class="link" href="#_parameters_2">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_10"><a class="anchor" href="#_responses_10"></a><a class="link" href="#_responses_10">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_10"><a class="anchor" href="#_produces_10"></a><a class="link" href="#_produces_10">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_3"><a class="anchor" href="#_handleusingget_3"></a><a class="link" href="#_handleusingget_3">2.3.3. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/caches</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_3"><a class="anchor" href="#_parameters_3"></a><a class="link" href="#_parameters_3">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_11"><a class="anchor" href="#_responses_11"></a><a class="link" href="#_responses_11">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_11"><a class="anchor" href="#_produces_11"></a><a class="link" href="#_produces_11">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingdelete_1"><a class="anchor" href="#_handleusingdelete_1"></a><a class="link" href="#_handleusingdelete_1">2.3.4. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>DELETE /actuator/caches</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_4"><a class="anchor" href="#_parameters_4"></a><a class="link" href="#_parameters_4">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_12"><a class="anchor" href="#_responses_12"></a><a class="link" href="#_responses_12">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>204</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_12"><a class="anchor" href="#_produces_12"></a><a class="link" href="#_produces_12">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_2"><a class="anchor" href="#_handleusingget_2"></a><a class="link" href="#_handleusingget_2">2.3.5. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/caches/{cache}</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_5"><a class="anchor" href="#_parameters_5"></a><a class="link" href="#_parameters_5">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_13"><a class="anchor" href="#_responses_13"></a><a class="link" href="#_responses_13">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_13"><a class="anchor" href="#_produces_13"></a><a class="link" href="#_produces_13">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingdelete"><a class="anchor" href="#_handleusingdelete"></a><a class="link" href="#_handleusingdelete">2.3.6. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>DELETE /actuator/caches/{cache}</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_6"><a class="anchor" href="#_parameters_6"></a><a class="link" href="#_parameters_6">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_14"><a class="anchor" href="#_responses_14"></a><a class="link" href="#_responses_14">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>204</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_14"><a class="anchor" href="#_produces_14"></a><a class="link" href="#_produces_14">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_4"><a class="anchor" href="#_handleusingget_4"></a><a class="link" href="#_handleusingget_4">2.3.7. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/conditions</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_7"><a class="anchor" href="#_parameters_7"></a><a class="link" href="#_parameters_7">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_15"><a class="anchor" href="#_responses_15"></a><a class="link" href="#_responses_15">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_15"><a class="anchor" href="#_produces_15"></a><a class="link" href="#_produces_15">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_5"><a class="anchor" href="#_handleusingget_5"></a><a class="link" href="#_handleusingget_5">2.3.8. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/configprops</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_8"><a class="anchor" href="#_parameters_8"></a><a class="link" href="#_parameters_8">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_16"><a class="anchor" href="#_responses_16"></a><a class="link" href="#_responses_16">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_16"><a class="anchor" href="#_produces_16"></a><a class="link" href="#_produces_16">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_7"><a class="anchor" href="#_handleusingget_7"></a><a class="link" href="#_handleusingget_7">2.3.9. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/env</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_9"><a class="anchor" href="#_parameters_9"></a><a class="link" href="#_parameters_9">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_17"><a class="anchor" href="#_responses_17"></a><a class="link" href="#_responses_17">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_17"><a class="anchor" href="#_produces_17"></a><a class="link" href="#_produces_17">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_6"><a class="anchor" href="#_handleusingget_6"></a><a class="link" href="#_handleusingget_6">2.3.10. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/env/{toMatch}</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_10"><a class="anchor" href="#_parameters_10"></a><a class="link" href="#_parameters_10">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_18"><a class="anchor" href="#_responses_18"></a><a class="link" href="#_responses_18">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_18"><a class="anchor" href="#_produces_18"></a><a class="link" href="#_produces_18">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_8"><a class="anchor" href="#_handleusingget_8"></a><a class="link" href="#_handleusingget_8">2.3.11. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/features</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_11"><a class="anchor" href="#_parameters_11"></a><a class="link" href="#_parameters_11">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_19"><a class="anchor" href="#_responses_19"></a><a class="link" href="#_responses_19">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_19"><a class="anchor" href="#_produces_19"></a><a class="link" href="#_produces_19">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_10"><a class="anchor" href="#_handleusingget_10"></a><a class="link" href="#_handleusingget_10">2.3.12. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/health</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_12"><a class="anchor" href="#_parameters_12"></a><a class="link" href="#_parameters_12">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_20"><a class="anchor" href="#_responses_20"></a><a class="link" href="#_responses_20">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_20"><a class="anchor" href="#_produces_20"></a><a class="link" href="#_produces_20">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_9"><a class="anchor" href="#_handleusingget_9"></a><a class="link" href="#_handleusingget_9">2.3.13. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/health/**</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_13"><a class="anchor" href="#_parameters_13"></a><a class="link" href="#_parameters_13">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_21"><a class="anchor" href="#_responses_21"></a><a class="link" href="#_responses_21">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_21"><a class="anchor" href="#_produces_21"></a><a class="link" href="#_produces_21">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_11"><a class="anchor" href="#_handleusingget_11"></a><a class="link" href="#_handleusingget_11">2.3.14. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/heapdump</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_14"><a class="anchor" href="#_parameters_14"></a><a class="link" href="#_parameters_14">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_22"><a class="anchor" href="#_responses_22"></a><a class="link" href="#_responses_22">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_22"><a class="anchor" href="#_produces_22"></a><a class="link" href="#_produces_22">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/octet-stream</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_12"><a class="anchor" href="#_handleusingget_12"></a><a class="link" href="#_handleusingget_12">2.3.15. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/info</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_15"><a class="anchor" href="#_parameters_15"></a><a class="link" href="#_parameters_15">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_23"><a class="anchor" href="#_responses_23"></a><a class="link" href="#_responses_23">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_23"><a class="anchor" href="#_produces_23"></a><a class="link" href="#_produces_23">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_14"><a class="anchor" href="#_handleusingget_14"></a><a class="link" href="#_handleusingget_14">2.3.16. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/loggers</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_16"><a class="anchor" href="#_parameters_16"></a><a class="link" href="#_parameters_16">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_24"><a class="anchor" href="#_responses_24"></a><a class="link" href="#_responses_24">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_24"><a class="anchor" href="#_produces_24"></a><a class="link" href="#_produces_24">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingpost"><a class="anchor" href="#_handleusingpost"></a><a class="link" href="#_handleusingpost">2.3.17. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>POST /actuator/loggers/{name}</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_17"><a class="anchor" href="#_parameters_17"></a><a class="link" href="#_parameters_17">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_25"><a class="anchor" href="#_responses_25"></a><a class="link" href="#_responses_25">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Created</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_consumes_6"><a class="anchor" href="#_consumes_6"></a><a class="link" href="#_consumes_6">Consumes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_produces_25"><a class="anchor" href="#_produces_25"></a><a class="link" href="#_produces_25">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_13"><a class="anchor" href="#_handleusingget_13"></a><a class="link" href="#_handleusingget_13">2.3.18. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/loggers/{name}</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_18"><a class="anchor" href="#_parameters_18"></a><a class="link" href="#_parameters_18">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_26"><a class="anchor" href="#_responses_26"></a><a class="link" href="#_responses_26">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_26"><a class="anchor" href="#_produces_26"></a><a class="link" href="#_produces_26">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_15"><a class="anchor" href="#_handleusingget_15"></a><a class="link" href="#_handleusingget_15">2.3.19. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/mappings</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_19"><a class="anchor" href="#_parameters_19"></a><a class="link" href="#_parameters_19">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_27"><a class="anchor" href="#_responses_27"></a><a class="link" href="#_responses_27">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_27"><a class="anchor" href="#_produces_27"></a><a class="link" href="#_produces_27">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_17"><a class="anchor" href="#_handleusingget_17"></a><a class="link" href="#_handleusingget_17">2.3.20. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/metrics</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_20"><a class="anchor" href="#_parameters_20"></a><a class="link" href="#_parameters_20">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_28"><a class="anchor" href="#_responses_28"></a><a class="link" href="#_responses_28">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_28"><a class="anchor" href="#_produces_28"></a><a class="link" href="#_produces_28">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_16"><a class="anchor" href="#_handleusingget_16"></a><a class="link" href="#_handleusingget_16">2.3.21. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/metrics/{requiredMetricName}</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_21"><a class="anchor" href="#_parameters_21"></a><a class="link" href="#_parameters_21">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_29"><a class="anchor" href="#_responses_29"></a><a class="link" href="#_responses_29">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_29"><a class="anchor" href="#_produces_29"></a><a class="link" href="#_produces_29">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_18"><a class="anchor" href="#_handleusingget_18"></a><a class="link" href="#_handleusingget_18">2.3.22. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/nacos-discovery</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_22"><a class="anchor" href="#_parameters_22"></a><a class="link" href="#_parameters_22">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_30"><a class="anchor" href="#_responses_30"></a><a class="link" href="#_responses_30">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_30"><a class="anchor" href="#_produces_30"></a><a class="link" href="#_produces_30">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingpost_1"><a class="anchor" href="#_handleusingpost_1"></a><a class="link" href="#_handleusingpost_1">2.3.23. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>POST /actuator/refresh</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_23"><a class="anchor" href="#_parameters_23"></a><a class="link" href="#_parameters_23">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_31"><a class="anchor" href="#_responses_31"></a><a class="link" href="#_responses_31">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Created</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_consumes_7"><a class="anchor" href="#_consumes_7"></a><a class="link" href="#_consumes_7">Consumes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/json</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_produces_31"><a class="anchor" href="#_produces_31"></a><a class="link" href="#_produces_31">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_19"><a class="anchor" href="#_handleusingget_19"></a><a class="link" href="#_handleusingget_19">2.3.24. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/scheduledtasks</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_24"><a class="anchor" href="#_parameters_24"></a><a class="link" href="#_parameters_24">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_32"><a class="anchor" href="#_responses_32"></a><a class="link" href="#_responses_32">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_32"><a class="anchor" href="#_produces_32"></a><a class="link" href="#_produces_32">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingpost_2"><a class="anchor" href="#_handleusingpost_2"></a><a class="link" href="#_handleusingpost_2">2.3.25. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>POST /actuator/service-registry</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_25"><a class="anchor" href="#_parameters_25"></a><a class="link" href="#_parameters_25">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_33"><a class="anchor" href="#_responses_33"></a><a class="link" href="#_responses_33">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Created</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_consumes_8"><a class="anchor" href="#_consumes_8"></a><a class="link" href="#_consumes_8">Consumes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_produces_33"><a class="anchor" href="#_produces_33"></a><a class="link" href="#_produces_33">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_20"><a class="anchor" href="#_handleusingget_20"></a><a class="link" href="#_handleusingget_20">2.3.26. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/service-registry</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_26"><a class="anchor" href="#_parameters_26"></a><a class="link" href="#_parameters_26">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_34"><a class="anchor" href="#_responses_34"></a><a class="link" href="#_responses_34">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_34"><a class="anchor" href="#_produces_34"></a><a class="link" href="#_produces_34">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_handleusingget_21"><a class="anchor" href="#_handleusingget_21"></a><a class="link" href="#_handleusingget_21">2.3.27. handle</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator/threaddump</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_27"><a class="anchor" href="#_parameters_27"></a><a class="link" href="#_parameters_27">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>body</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, string &gt; map</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_35"><a class="anchor" href="#_responses_35"></a><a class="link" href="#_responses_35">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_35"><a class="anchor" href="#_produces_35"></a><a class="link" href="#_produces_35">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>text/plain;charset=UTF-8</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_test-controller_resource"><a class="anchor" href="#_test-controller_resource"></a><a class="link" href="#_test-controller_resource">2.4. Test-controller</a></h3>
-<div class="paragraph">
-<p>Test Controller</p>
-</div>
-<div class="sect3">
-<h4 id="_callusercenterusingget"><a class="anchor" href="#_callusercenterusingget"></a><a class="link" href="#_callusercenterusingget">2.4.1. callUserCenter</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /test/call/hello</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_responses_36"><a class="anchor" href="#_responses_36"></a><a class="link" href="#_responses_36">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_36"><a class="anchor" href="#_produces_36"></a><a class="link" href="#_produces_36">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_callbyribbonusingget"><a class="anchor" href="#_callbyribbonusingget"></a><a class="link" href="#_callbyribbonusingget">2.4.2. callByRibbon</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /test/call/ribbon</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_responses_37"><a class="anchor" href="#_responses_37"></a><a class="link" href="#_responses_37">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_37"><a class="anchor" href="#_produces_37"></a><a class="link" href="#_produces_37">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_getinstancesusingget"><a class="anchor" href="#_getinstancesusingget"></a><a class="link" href="#_getinstancesusingget">2.4.3. getInstances</a></h4>
+<h4 id="_getinstancesusingget"><a class="anchor" href="#_getinstancesusingget"></a><a class="link" href="#_getinstancesusingget">2.2.3. getInstances</a></h4>
 <div class="literalblock">
 <div class="content">
 <pre>GET /test/discovery</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_responses_38"><a class="anchor" href="#_responses_38"></a><a class="link" href="#_responses_38">Responses</a></h5>
+<h5 id="_responses_4"><a class="anchor" href="#_responses_4"></a><a class="link" href="#_responses_4">Responses</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 10%;">
@@ -3882,7 +860,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_produces_38"><a class="anchor" href="#_produces_38"></a><a class="link" href="#_produces_38">Produces</a></h5>
+<h5 id="_produces_4"><a class="anchor" href="#_produces_4"></a><a class="link" href="#_produces_4">Produces</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -3893,14 +871,14 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect3">
-<h4 id="_queryusingget_1"><a class="anchor" href="#_queryusingget_1"></a><a class="link" href="#_queryusingget_1">2.4.4. query</a></h4>
+<h4 id="_queryusingget_1"><a class="anchor" href="#_queryusingget_1"></a><a class="link" href="#_queryusingget_1">2.2.4. query</a></h4>
 <div class="literalblock">
 <div class="content">
 <pre>GET /test/test-q</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_parameters_28"><a class="anchor" href="#_parameters_28"></a><a class="link" href="#_parameters_28">Parameters</a></h5>
+<h5 id="_parameters"><a class="anchor" href="#_parameters"></a><a class="link" href="#_parameters">Parameters</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 22.2222%;">
@@ -3917,9 +895,45 @@ table.CodeRay td.code>pre{padding:0}
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>avatarUrl</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>bonus</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer (int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>createTime</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string (date-time)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>id</strong><br>
 <em>optional</em></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">integer (int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>roles</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>updateTime</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string (date-time)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>wxId</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
@@ -3931,7 +945,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_responses_39"><a class="anchor" href="#_responses_39"></a><a class="link" href="#_responses_39">Responses</a></h5>
+<h5 id="_responses_5"><a class="anchor" href="#_responses_5"></a><a class="link" href="#_responses_5">Responses</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 10%;">
@@ -3949,7 +963,7 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_userdto">UserDto</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_userdto">UserDTO</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
@@ -3970,7 +984,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_produces_39"><a class="anchor" href="#_produces_39"></a><a class="link" href="#_produces_39">Produces</a></h5>
+<h5 id="_produces_5"><a class="anchor" href="#_produces_5"></a><a class="link" href="#_produces_5">Produces</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -3982,81 +996,12 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="_web-mvc-links-handler_resource"><a class="anchor" href="#_web-mvc-links-handler_resource"></a><a class="link" href="#_web-mvc-links-handler_resource">2.5. Web-mvc-links-handler</a></h3>
-<div class="paragraph">
-<p>Web Mvc Links Handler</p>
-</div>
-<div class="sect3">
-<h4 id="_linksusingget"><a class="anchor" href="#_linksusingget"></a><a class="link" href="#_linksusingget">2.5.1. links</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /actuator</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_responses_40"><a class="anchor" href="#_responses_40"></a><a class="link" href="#_responses_40">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, &lt; string, <a href="#_link">Link</a> &gt; map &gt; map</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_40"><a class="anchor" href="#_produces_40"></a><a class="link" href="#_produces_40">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v3+json</code></p>
-</li>
-<li>
-<p><code>application/json</code></p>
-</li>
-<li>
-<p><code>application/vnd.spring-boot.actuator.v2+json</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_917a6a0ad3b9cec276900e3a86586a07"><a class="anchor" href="#_917a6a0ad3b9cec276900e3a86586a07"></a><a class="link" href="#_917a6a0ad3b9cec276900e3a86586a07">2.6. 公告接口</a></h3>
+<h3 id="_926ac08843c1f757ae8e532b0daf7186"><a class="anchor" href="#_926ac08843c1f757ae8e532b0daf7186"></a><a class="link" href="#_926ac08843c1f757ae8e532b0daf7186">2.3. 公共接口</a></h3>
 <div class="paragraph">
 <p>Notice Controller</p>
 </div>
 <div class="sect3">
-<h4 id="_gettopnoticeusingget"><a class="anchor" href="#_gettopnoticeusingget"></a><a class="link" href="#_gettopnoticeusingget">2.6.1. 查询最新一条公告</a></h4>
+<h4 id="_gettopnoticeusingget"><a class="anchor" href="#_gettopnoticeusingget"></a><a class="link" href="#_gettopnoticeusingget">2.3.1. 查询最新一条公告</a></h4>
 <div class="literalblock">
 <div class="content">
 <pre>GET /notice/one</pre>
@@ -4069,7 +1014,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect4">
-<h5 id="_responses_41"><a class="anchor" href="#_responses_41"></a><a class="link" href="#_responses_41">Responses</a></h5>
+<h5 id="_responses_6"><a class="anchor" href="#_responses_6"></a><a class="link" href="#_responses_6">Responses</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 10%;">
@@ -4108,7 +1053,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_produces_41"><a class="anchor" href="#_produces_41"></a><a class="link" href="#_produces_41">Produces</a></h5>
+<h5 id="_produces_6"><a class="anchor" href="#_produces_6"></a><a class="link" href="#_produces_6">Produces</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -4120,116 +1065,25 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="_3ecef281a805f36ea4142625eefacc12"><a class="anchor" href="#_3ecef281a805f36ea4142625eefacc12"></a><a class="link" href="#_3ecef281a805f36ea4142625eefacc12">2.7. 分享接口</a></h3>
+<h3 id="_3ecef281a805f36ea4142625eefacc12"><a class="anchor" href="#_3ecef281a805f36ea4142625eefacc12"></a><a class="link" href="#_3ecef281a805f36ea4142625eefacc12">2.4. 分享接口</a></h3>
 <div class="paragraph">
 <p>Share Controller</p>
 </div>
 <div class="sect3">
-<h4 id="_getsharebyidusingget"><a class="anchor" href="#_getsharebyidusingget"></a><a class="link" href="#_getsharebyidusingget">2.7.1. 查询指定id的分享详情</a></h4>
+<h4 id="_queryusingget"><a class="anchor" href="#_queryusingget"></a><a class="link" href="#_queryusingget">2.4.1. 分享列表</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>GET /share/one/{id}</pre>
+<pre>GET /shares/query</pre>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_description_2"><a class="anchor" href="#_description_2"></a><a class="link" href="#_description_2">Description</a></h5>
 <div class="paragraph">
-<p>查询指定id的分享详情</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_29"><a class="anchor" href="#_parameters_29"></a><a class="link" href="#_parameters_29">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Path</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>id</strong><br>
-<em>required</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer (int32)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_42"><a class="anchor" href="#_responses_42"></a><a class="link" href="#_responses_42">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_b3aa729e321b5a0a8db2802fb0f94751">分享详情，带发布人昵称</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_42"><a class="anchor" href="#_produces_42"></a><a class="link" href="#_produces_42">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_queryusingget"><a class="anchor" href="#_queryusingget"></a><a class="link" href="#_queryusingget">2.7.2. 分享列表</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /share/query</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_description_3"><a class="anchor" href="#_description_3"></a><a class="link" href="#_description_3">Description</a></h5>
-<div class="paragraph">
 <p>分享列表</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_parameters_30"><a class="anchor" href="#_parameters_30"></a><a class="link" href="#_parameters_30">Parameters</a></h5>
+<h5 id="_parameters_2"><a class="anchor" href="#_parameters_2"></a><a class="link" href="#_parameters_2">Parameters</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 10%;">
@@ -4284,7 +1138,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_responses_43"><a class="anchor" href="#_responses_43"></a><a class="link" href="#_responses_43">Responses</a></h5>
+<h5 id="_responses_7"><a class="anchor" href="#_responses_7"></a><a class="link" href="#_responses_7">Responses</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 10%;">
@@ -4323,7 +1177,98 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_produces_43"><a class="anchor" href="#_produces_43"></a><a class="link" href="#_produces_43">Produces</a></h5>
+<h5 id="_produces_7"><a class="anchor" href="#_produces_7"></a><a class="link" href="#_produces_7">Produces</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>/</strong></code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_findbyidusingget"><a class="anchor" href="#_findbyidusingget"></a><a class="link" href="#_findbyidusingget">2.4.2. 查询指定id的分享详情</a></h4>
+<div class="literalblock">
+<div class="content">
+<pre>GET /shares/{id}</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_description_3"><a class="anchor" href="#_description_3"></a><a class="link" href="#_description_3">Description</a></h5>
+<div class="paragraph">
+<p>查询指定id的分享详情</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_parameters_3"><a class="anchor" href="#_parameters_3"></a><a class="link" href="#_parameters_3">Parameters</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Path</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>id</strong><br>
+<em>required</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer (int32)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_responses_8"><a class="anchor" href="#_responses_8"></a><a class="link" href="#_responses_8">Responses</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 70%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">HTTP Code</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_b3aa729e321b5a0a8db2802fb0f94751">分享详情，带发布人昵称</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_produces_8"><a class="anchor" href="#_produces_8"></a><a class="link" href="#_produces_8">Produces</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -4340,92 +1285,7 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="_definitions"><a class="anchor" href="#_definitions"></a><a class="link" href="#_definitions">3. Definitions</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_link"><a class="anchor" href="#_link"></a><a class="link" href="#_link">3.1. Link</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>href</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>templated</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_53d375507d198e9157717964970e1987"><a class="anchor" href="#_53d375507d198e9157717964970e1987"></a><a class="link" href="#_53d375507d198e9157717964970e1987">3.2. Map«string,Link»</a></h3>
-<div class="paragraph">
-<p><em>Type</em> : &lt; string, <a href="#_link">Link</a> &gt; map</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_modelandview"><a class="anchor" href="#_modelandview"></a><a class="link" href="#_modelandview">3.3. ModelAndView</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>empty</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>model</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>modelMap</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, object &gt; map</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>reference</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>status</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">enum (100 CONTINUE, 101 SWITCHING_PROTOCOLS, 102 PROCESSING, 103 CHECKPOINT, 200 OK, 201 CREATED, 202 ACCEPTED, 203 NON_AUTHORITATIVE_INFORMATION, 204 NO_CONTENT, 205 RESET_CONTENT, 206 PARTIAL_CONTENT, 207 MULTI_STATUS, 208 ALREADY_REPORTED, 226 IM_USED, 300 MULTIPLE_CHOICES, 301 MOVED_PERMANENTLY, 302 FOUND, 302 MOVED_TEMPORARILY, 303 SEE_OTHER, 304 NOT_MODIFIED, 305 USE_PROXY, 307 TEMPORARY_REDIRECT, 308 PERMANENT_REDIRECT, 400 BAD_REQUEST, 401 UNAUTHORIZED, 402 PAYMENT_REQUIRED, 403 FORBIDDEN, 404 NOT_FOUND, 405 METHOD_NOT_ALLOWED, 406 NOT_ACCEPTABLE, 407 PROXY_AUTHENTICATION_REQUIRED, 408 REQUEST_TIMEOUT, 409 CONFLICT, 410 GONE, 411 LENGTH_REQUIRED, 412 PRECONDITION_FAILED, 413 PAYLOAD_TOO_LARGE, 413 REQUEST_ENTITY_TOO_LARGE, 414 URI_TOO_LONG, 414 REQUEST_URI_TOO_LONG, 415 UNSUPPORTED_MEDIA_TYPE, 416 REQUESTED_RANGE_NOT_SATISFIABLE, 417 EXPECTATION_FAILED, 418 I_AM_A_TEAPOT, 419 INSUFFICIENT_SPACE_ON_RESOURCE, 420 METHOD_FAILURE, 421 DESTINATION_LOCKED, 422 UNPROCESSABLE_ENTITY, 423 LOCKED, 424 FAILED_DEPENDENCY, 425 TOO_EARLY, 426 UPGRADE_REQUIRED, 428 PRECONDITION_REQUIRED, 429 TOO_MANY_REQUESTS, 431 REQUEST_HEADER_FIELDS_TOO_LARGE, 451 UNAVAILABLE_FOR_LEGAL_REASONS, 500 INTERNAL_SERVER_ERROR, 501 NOT_IMPLEMENTED, 502 BAD_GATEWAY, 503 SERVICE_UNAVAILABLE, 504 GATEWAY_TIMEOUT, 505 HTTP_VERSION_NOT_SUPPORTED, 506 VARIANT_ALSO_NEGOTIATES, 507 INSUFFICIENT_STORAGE, 508 LOOP_DETECTED, 509 BANDWIDTH_LIMIT_EXCEEDED, 510 NOT_EXTENDED, 511 NETWORK_AUTHENTICATION_REQUIRED)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>view</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_view">View</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>viewName</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_serviceinstance"><a class="anchor" href="#_serviceinstance"></a><a class="link" href="#_serviceinstance">3.4. ServiceInstance</a></h3>
+<h3 id="_serviceinstance"><a class="anchor" href="#_serviceinstance"></a><a class="link" href="#_serviceinstance">3.1. ServiceInstance</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -4482,7 +1342,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect2">
-<h3 id="_uri"><a class="anchor" href="#_uri"></a><a class="link" href="#_uri">3.5. URI</a></h3>
+<h3 id="_uri"><a class="anchor" href="#_uri"></a><a class="link" href="#_uri">3.2. URI</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -4584,7 +1444,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect2">
-<h3 id="_userdto"><a class="anchor" href="#_userdto"></a><a class="link" href="#_userdto">3.6. UserDto</a></h3>
+<h3 id="_userdto"><a class="anchor" href="#_userdto"></a><a class="link" href="#_userdto">3.3. UserDTO</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -4598,9 +1458,39 @@ table.CodeRay td.code>pre{padding:0}
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>avatarUrl</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>bonus</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer (int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>createTime</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string (date-time)</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>id</strong><br>
 <em>optional</em></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">integer (int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>roles</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>updateTime</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string (date-time)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>wxId</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>wxNickname</strong><br>
@@ -4611,29 +1501,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect2">
-<h3 id="_view"><a class="anchor" href="#_view"></a><a class="link" href="#_view">3.7. View</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>contentType</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_fa86f1a57d6f758a93cb33b59c015654"><a class="anchor" href="#_fa86f1a57d6f758a93cb33b59c015654"></a><a class="link" href="#_fa86f1a57d6f758a93cb33b59c015654">3.8. 公告</a></h3>
+<h3 id="_fa86f1a57d6f758a93cb33b59c015654"><a class="anchor" href="#_fa86f1a57d6f758a93cb33b59c015654"></a><a class="link" href="#_fa86f1a57d6f758a93cb33b59c015654">3.4. 公告</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -4658,7 +1526,7 @@ table.CodeRay td.code>pre{padding:0}
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>createTime</strong><br>
 <em>optional</em></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">创建时间</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string (date)</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string (date-time)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>id</strong><br>
@@ -4676,7 +1544,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect2">
-<h3 id="_c31f48f84ef207e66a03c015a7243b43"><a class="anchor" href="#_c31f48f84ef207e66a03c015a7243b43"></a><a class="link" href="#_c31f48f84ef207e66a03c015a7243b43">3.9. 分享</a></h3>
+<h3 id="_c31f48f84ef207e66a03c015a7243b43"><a class="anchor" href="#_c31f48f84ef207e66a03c015a7243b43"></a><a class="link" href="#_c31f48f84ef207e66a03c015a7243b43">3.5. 分享</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -4694,19 +1562,19 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>auditStatus</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">批阅状态</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">审核状态 NOT_YET: 待审核 PASSED:审核通过 REJECTED:审核不通过</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>author</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">资源作者</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">作者</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>buyCount</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">购买数量</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">下载数</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">integer (int32)</p></td>
 </tr>
 <tr>
@@ -4719,7 +1587,7 @@ table.CodeRay td.code>pre{padding:0}
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>createTime</strong><br>
 <em>optional</em></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">创建时间</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string (date)</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string (date-time)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>downloadUrl</strong><br>
@@ -4736,44 +1604,44 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>isOriginal</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">是否原创 0：不是 1：是</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">是否原创 0:否 1:是</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>price</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">价格</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">价格（需要的积分）</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">integer (int32)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>reason</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">不予通过原因</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">审核不通过原因</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>showFlag</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">是否展示 0：不展示 1：展示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">是否显示 0:否 1:是</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>summary</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">摘要</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">概要信息</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>title</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">标题</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">分享内容标题</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>updateTime</strong><br>
 <em>optional</em></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">更新时间</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string (date)</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string (date-time)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>userId</strong><br>
@@ -4785,7 +1653,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect2">
-<h3 id="_b3aa729e321b5a0a8db2802fb0f94751"><a class="anchor" href="#_b3aa729e321b5a0a8db2802fb0f94751"></a><a class="link" href="#_b3aa729e321b5a0a8db2802fb0f94751">3.10. 分享详情，带发布人昵称</a></h3>
+<h3 id="_b3aa729e321b5a0a8db2802fb0f94751"><a class="anchor" href="#_b3aa729e321b5a0a8db2802fb0f94751"></a><a class="link" href="#_b3aa729e321b5a0a8db2802fb0f94751">3.6. 分享详情，带发布人昵称</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -4807,7 +1675,7 @@ table.CodeRay td.code>pre{padding:0}
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_c31f48f84ef207e66a03c015a7243b43">分享</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>wxNickName</strong><br>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>wxNickname</strong><br>
 <em>optional</em></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">发布人昵称</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
@@ -4820,7 +1688,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-05 14:06:22 CST
+Last updated 2020-10-05 10:49:17 CST
 </div>
 </div>
 </body>

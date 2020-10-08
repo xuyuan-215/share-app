@@ -1,21 +1,23 @@
 server:
-  port: 8083
+  port: 8877
 spring:
   application:
     name: user-center
   cloud:
     nacos:
       discovery:
-        server-addr: 118.31.45.29:8848
-#        namespace: 7951ac9f-2b92-4790-96db-4e3bbe75c088
+        server-addr: localhost:8848
+#        metadata:
+#          instance: aa
+#          namespace: 4eef7a74-a5bd-4ee2-b770-90b209d5417f
 
-  #        server-addr: 47.98.162.206:8848
   datasource:
-    url: jdbc:mysql://rm-uf654i8ok1o971a07ro.mysql.rds.aliyuncs.com:3306/user-center
+    url: jdbc:mysql://rm-uf654i8ok1o971a07ro.mysql.rds.aliyuncs.com:3306/user-center?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
     hikari:
       username: xuyuan
       password: xuyuan123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
 management:
   endpoints:
     web:
@@ -25,3 +27,5 @@ management:
     health:
       show-details: always
 
+rocketmq:
+  name-server: 101.200.130.236:9876
