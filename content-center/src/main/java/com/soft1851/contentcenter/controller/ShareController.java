@@ -1,14 +1,18 @@
 package com.soft1851.contentcenter.controller;
 
+import com.alibaba.nacos.common.utils.StringUtils;
 import com.soft1851.contentcenter.domain.dto.ShareContributeDto;
 import com.soft1851.contentcenter.domain.dto.ShareDto;
 import com.soft1851.contentcenter.domain.dto.UserDTO;
 import com.soft1851.contentcenter.domain.entity.Share;
 import com.soft1851.contentcenter.feignclient.TestUserCenterFeignClient;
 import com.soft1851.contentcenter.service.ShareService;
+import com.soft1851.contentcenter.util.JwtOperator;
+import io.jsonwebtoken.Claims;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
@@ -24,9 +28,10 @@ import java.util.List;
 @RequestMapping(value = "/shares")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Api(tags = "分享接口", value = "提供分享相关的Rest API")
+@Slf4j
 public class ShareController {
     private final ShareService shareService;
-
+    private final JwtOperator jwtOperator;
     private final TestUserCenterFeignClient testUserCenterFeignClient;
 
     @GetMapping(value = "/{id}")
@@ -53,10 +58,17 @@ public class ShareController {
             @RequestParam(required = false) String title,
             @RequestParam(required = false, defaultValue = "1") Integer pageNo,
             @RequestParam(required = false, defaultValue = "10") Integer pageSize,
-            @RequestParam(required = false) Integer userId
-    ) throws Exception {
+            @RequestHeader(value = "X-Token", required = false) String token) throws Exception {
         if (pageSize > 100) {
             pageSize = 100;
+        }
+        Integer userId = null;
+        if (StringUtils.isNotBlank(token)) {
+            Claims claims = this.jwtOperator.getClaimsFromToken(token);
+            log.info(claims.toString());
+            userId = (Integer) claims.get("id");
+        } else {
+            log.info("没有token");
         }
         return this.shareService.query(title, pageNo, pageSize, userId).getList();
     }

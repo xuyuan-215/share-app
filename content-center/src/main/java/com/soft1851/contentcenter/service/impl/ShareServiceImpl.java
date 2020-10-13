@@ -148,10 +148,10 @@ public class ShareServiceImpl implements ShareService {
                             .bonus(50)
                             .build());
             // 4、使用Feign来调用用户中心更改积分的接口（同步）
-            this.userCenterFeignClient.addBonus(UserAddBonusMsgDTO.builder()
-                    .userId(share.getUserId())
-                    .bonus(50)
-                    .build());
+//            this.userCenterFeignClient.addBonus(UserAddBonusMsgDTO.builder()
+//                    .userId(share.getUserId())
+//                    .bonus(50)
+//                    .build());
         }
         return share;
     }

@@ -1,5 +1,6 @@
 package com.soft1851.usercenter.service;
 
+import com.soft1851.usercenter.domain.dto.LoginDTO;
 import com.soft1851.usercenter.domain.dto.UserAddBonusMsgDTO;
 import com.soft1851.usercenter.domain.entity.User;
 
@@ -22,4 +23,12 @@ public interface UserService {
      * @param userAddBonusMsgDTO
      */
     int addBonus(UserAddBonusMsgDTO userAddBonusMsgDTO);
+
+    /**
+     * 用户登录
+     * @param loginDTO
+     * @param openId
+     * @return
+     */
+    User login(LoginDTO loginDTO, String openId);
 }
