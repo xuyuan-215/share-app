@@ -20,4 +20,5 @@ public class UserRespDTO {
     private String avatarUrl;
     private Integer bonus;
     private String wxNickname;
+    private String roles;
 }

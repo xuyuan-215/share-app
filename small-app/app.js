@@ -61,7 +61,7 @@ App({
       user: null,
       wxId: '',
       code: '',
-      token: null
+      token: ''
     }
   })
   

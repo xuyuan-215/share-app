@@ -1,11 +1,10 @@
 package com.soft1851.share.content.service;
 
 import com.github.pagehelper.PageInfo;
-import com.soft1851.share.content.domain.dto.ExchangeDTO;
-import com.soft1851.share.content.domain.dto.ShareAuditDTO;
-import com.soft1851.share.content.domain.dto.ShareDTO;
-import com.soft1851.share.content.domain.dto.ShareRequestDTO;
+import com.soft1851.share.content.domain.dto.*;
 import com.soft1851.share.content.domain.entity.Share;
+
+import java.util.List;
 
 /**
  * @author
@@ -53,4 +52,24 @@ public interface ShareService {
      * @return Share
      */
     Share exchange(ExchangeDTO exchangeDTO);
+    /**
+     * 根据用户id查询该用户投稿的资源
+     * @param userDTO
+     * @return
+     */
+    List<Share> myContribute(UserDTO userDTO);
+    /**
+     * 我的兑换
+     * @param userDTO
+     * @return
+     */
+
+    List<Share> queryMy(UserDTO userDTO);
+
+
+    /**
+     * 查询未审核的帖子
+     * @return
+     */
+    List<Share> getUnAudit();
 }

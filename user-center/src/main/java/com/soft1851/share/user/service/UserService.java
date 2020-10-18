@@ -12,6 +12,7 @@ import java.util.List;
 public interface UserService {
     ResponseResult getUserInfo(Integer id);
 
+
     /**
      * 根据id获得用户详情
      *
@@ -56,4 +57,14 @@ public interface UserService {
      * @return
      */
     ResponseDTO checkIsSign(UserSignInDTO signInDTO);
+
+
+    /**
+     * 查询用户日志
+     * @param userDTO
+     * @return
+     */
+    ResponseDTO getLog(UserDTO userDTO);
+
+
 }

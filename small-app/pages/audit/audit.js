@@ -1,12 +1,13 @@
-// pages/myContribute/myContribute.js
+// pages/audit/audit.js
 const API = require('../../utils/request')
+const { getUnAudit } = require('../../utils/request')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    shareList: null
+    auditList: null
   },
 
   /**
@@ -27,13 +28,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    API.myContribute({
-      id: wx.getStorageSync('user').id
-    }).then(res => {
+    API.getUnAudit().then(res => {
       const req = JSON.parse(res)
-      var that = this
+      const that = this
+      console.log(req);
+      
       that.setData({
-        shareList: req.data
+        auditList: req.data
       })
     })
   },
@@ -71,5 +72,23 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  audit(){
+
+    // wx.request({
+    //   url: 'http://',//请求地址路径
+    //   data:'',//请求参数
+    //   method:"post/get",//请求方式
+    //   header:{//请求头
+    //     "content-type": "application/x-www-form-urlencoded"
+    //   },
+    //   success(res){
+    //     if(res.data.success){
+    //       console.log(res)
+    //     }else{
+    //       console.log(res)
+    //     }
+    //   }
+    // })
   }
 })

@@ -74,8 +74,6 @@ Page({
         //取出绑定对象
         console.log(e)
         var share = e.currentTarget.dataset.item
-        console.log(this.data.userId);
-        
         API.duihuan({
             userId: this.data.userId,
             shareId: share.id
@@ -86,4 +84,10 @@ Page({
             
         })
     },
+    down(e){
+        var share = e.currentTarget.dataset.item
+        wx.navigateTo({
+            url: '../duihuanSuccess/duihuanSuccess?share=' + JSON.stringify(share),
+        })   
+    }
 })

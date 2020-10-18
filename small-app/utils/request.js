@@ -1,5 +1,4 @@
-//统一接口封装
-const API_BASE_URL = 'http://localhost:8041';
+const API_BASE_URL = 'http://localhost:8040';
 const app = getApp()
 
 
@@ -102,5 +101,21 @@ module.exports ={
   },
   signIn: (data) => {
     return post('/users/signin',data,'json') // 签到
-  }
+  },
+  myContribute: (data) => {
+    return post('/shares/myContribute',data,'json') //查询我的投稿
+  },
+  myShare: (data) => {
+    return post('/shares/myShare',data,'json') //查询我的兑换
+  },
+  audit:(data) => {
+    return put('/admin/shares/audit/{id}',data,'json')//审核
+  },
+  getNotic:() =>{
+    console.log('获取最新公告')
+    return get('/notice/one') //获取最新公告
+  },
+  myLog: (data) => {
+    return post('/users/mylog',data,'json') //我的积分明细
+  },
 }

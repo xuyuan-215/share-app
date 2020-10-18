@@ -82,6 +82,11 @@
             <artifactId>jjwt-api</artifactId>
             <version>0.10.7</version>
         </dependency>
+        <!--        zipkin监控依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-impl</artifactId>

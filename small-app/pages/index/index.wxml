@@ -8,17 +8,22 @@ bindtap="changeTab">使用说明</view>
 </view>
 <!-- tab1 发现页 -->
 <view class="share-list" wx:if="{{tab == 0}}">
-<view>
-  <input type="text" class="search" placeholder="请输入搜索内容"/>
-
+  <!-- <view class="nocice">
+<text>{{notice.content}}</text>
+</view> -->
+<view class="search">
+<input placeholder="请输入搜索内容" confirm-type="search" class="search-input" bindinput="search" placeholder-class="placeholder-class"></input>
 </view>
+
+
 <view wx:for="{{shareList}}" wx:for-item="share" class="share-item">
 <view wx:if="{{share.isOriginal==0}}" class="origin-label {{share.isOriginal == 0 ? 'one':'two'}}">原创</view>
 <view wx:else class="origin-label {{share.isOriginal==0? 'one':'two'}}">转载</view>
 <image src="{{share.cover}}"></image>
 <view class="item-main" data-item="{{share}}" bindtap="goDetail">
 <text class="item-title">{{share.title}}</text>
-<text class="item-summary">作者：{{share.author}}</text>
+<text class="item-summary">{{share.author}}</text>
+<text class="item-summary">价格：{{share.price}}</text>
 </view>
 <view class="item-duihuan">
 <text data-item="{{share}}" bindtap="duihuan" wx:if="{{share.downloadUrl == null}}">兑换</text>
@@ -27,8 +32,8 @@ bindtap="changeTab">使用说明</view>
 </view>
 </view>
 <!-- tab2 使用说明 -->
-<view wx:else class="dicription">
-<text>资源均为免费,段焕后即可查看下载地址：点击我的->我的兑换，即可查看，下载兑换过的资源。</text>
+<view wx:else class="description">
+  <text>资源均为免费,段焕后即可查看下载地址：点击我的->我的兑换，即可查看，下载兑换过的资源。</text>
 
 <view>
 <text class="dicription-title">获得积分的方式</text>
@@ -40,18 +45,9 @@ bindtap="changeTab">使用说明</view>
 
 <view>
 <text class="dicription-title">深入交流</text>
-<view>> 技术交流QQ群：731548893</view>
+<view>> 技术交流QQ群：xxxxxx</view>
 <view>> 技术交流微信群：叫我微信，注明加微信群</view>
-<view>> 私人微信：jumping_me</view>
+<view>> xy</view>
 </view>
-
-<view>
-<text class="dicription-title">公众号（技术干活分享</text>
-<view>> 技术交流QQ群：731548893</view>
-<view>> 技术交流微信群：叫我微信，注明加微信群</view>
-<view>> 私人微信：jumping_me</view>
-</view>
-
-
 </view>
 </view>

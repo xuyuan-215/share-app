@@ -4,6 +4,7 @@ import com.soft1851.share.content.auth.CheckLogin;
 import com.soft1851.share.content.domain.dto.ExchangeDTO;
 import com.soft1851.share.content.domain.dto.ShareDTO;
 import com.soft1851.share.content.domain.dto.ShareRequestDTO;
+import com.soft1851.share.content.domain.dto.UserDTO;
 import com.soft1851.share.content.domain.entity.Share;
 import com.soft1851.share.content.service.ShareService;
 import com.soft1851.share.content.util.JwtOperator;
@@ -75,4 +76,18 @@ public class ShareController {
         System.out.println(exchangeDTO + ">>>>>>>>>>>>");
         return this.shareService.exchange(exchangeDTO);
     }
+    @PostMapping("/myContribute")
+    @CheckLogin
+    @ApiOperation(value = "查询我的投稿",notes = "查询我的投稿")
+    public List<Share> myContribue(@RequestBody UserDTO userDTO){
+        return this.shareService.myContribute(userDTO);
+    }
+    @PostMapping("/myShare")
+    @CheckLogin
+    @ApiOperation(value = "查询我的兑换",notes = "查询我的兑换")
+    public List<Share> getMy(@RequestBody UserDTO userDTO){
+        return this.shareService.queryMy(userDTO);
+    }
+
+
 }

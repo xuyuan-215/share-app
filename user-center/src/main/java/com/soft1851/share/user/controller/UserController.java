@@ -35,45 +35,45 @@ public class UserController {
     @PostMapping(value = "/login")
     public LoginResDTO login(@RequestBody LoginDTO loginDTO) throws WxErrorException {
         String openId;
-        if (loginDTO.getLoginCode() != null){
+        if (loginDTO.getLoginCode() != null) {
             //微信服务端校验是否已经登录的结果
             WxMaJscode2SessionResult result = this.wxMaService.getUserService()
                     .getSessionInfo(loginDTO.getLoginCode());
             log.info(result.toString());
             //微信的openId，用户在微信这边的唯一标识
             openId = result.getOpenid();
-        }else {
+        } else {
             openId = loginDTO.getOpenId();
         }
         //看用户是否注册，如果没有就注册，如果已经注册就返回信息
-        User user = userService.login(loginDTO,openId);
-        log.info("控制台登录的user："+user);
+        User user = userService.login(loginDTO, openId);
+        log.info("控制台登录的user：" + user);
         //颁发token
-        Map<String,Object> userInfo = new HashMap<>(3);
-        userInfo.put("id",user.getId());
-        userInfo.put("wxNickname",user.getWxNickname());
-        userInfo.put("role",user.getRoles());
+        Map<String, Object> userInfo = new HashMap<>(3);
+        userInfo.put("id", user.getId());
+        userInfo.put("wxNickname", user.getWxNickname());
+        userInfo.put("role", user.getRoles());
         String token = jwtOperator.generateToken(userInfo);
-        log.info("{}登录成功，生成的token = {}，有效期到： {}",user.getWxNickname(),token,jwtOperator.getExpirationTime());
+        log.info("{}登录成功，生成的token = {}，有效期到： {}", user.getWxNickname(), token, jwtOperator.getExpirationTime());
         ResponseDTO responseDTO = this.userService.checkIsSign(UserSignInDTO.builder().userId(user.getId()).build());
-        log.info("controller的responseDTO:"+responseDTO);
+        log.info("controller的responseDTO:" + responseDTO);
         int isUserSignin = 0;
-        if (responseDTO.getCode()=="200"){
+        if (responseDTO.getCode() == "200") {
             isUserSignin = 0;
-        }else {
+        } else {
             isUserSignin = 1;
         }
         return LoginResDTO.builder()
                 .user(UserRespDTO.builder()
-                      .id(user.getId())
+                        .id(user.getId())
                         .wxNickname(user.getWxNickname())
-                       .avatarUrl(user.getAvatarUrl())
-                      .bonus(user.getBonus())
-                       .build())
+                        .avatarUrl(user.getAvatarUrl())
+                        .bonus(user.getBonus())
+                        .build())
                 .token(JwtTokenRespDTO.builder()
-                .token(token)
-                .expirationTime(jwtOperator.getExpirationTime().getTime())
-                .build())
+                        .token(token)
+                        .expirationTime(jwtOperator.getExpirationTime().getTime())
+                        .build())
                 .isUserSignin(isUserSignin)
                 .build();
     }
@@ -109,12 +109,19 @@ public class UserController {
     public User updateBonus(@RequestBody UserAddBonusMsgDTO userAddBonusMsgDTO) {
         return userService.updateBonus(userAddBonusMsgDTO);
     }
+
     @PostMapping(value = "/reduceBonus")
-    public User reduceBonus(@RequestBody UserAddBonusMsgDTO userAddBonusMsgDTO){
+    public User reduceBonus(@RequestBody UserAddBonusMsgDTO userAddBonusMsgDTO) {
         return userService.reduceBonus(userAddBonusMsgDTO);
     }
+
     @PostMapping(value = "/signin")
-    public ResponseDTO signIn(@RequestBody UserSignInDTO userSignInDTO){
+    public ResponseDTO signIn(@RequestBody UserSignInDTO userSignInDTO) {
         return userService.signIn(userSignInDTO);
+    }
+
+    @PostMapping(value = "/mylog")
+    public ResponseDTO myLog(@RequestBody UserDTO userDTO) {
+        return userService.getLog(userDTO);
     }
 }

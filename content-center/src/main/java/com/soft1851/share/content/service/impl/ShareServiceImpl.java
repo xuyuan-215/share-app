@@ -23,6 +23,7 @@ import org.springframework.web.client.AsyncRestTemplate;
 import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.util.StringUtil;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -73,7 +74,7 @@ public class ShareServiceImpl implements ShareService {
                 .downloadUrl(shareRequestDTO.getDownloadUrl())
                 .auditStatus("NOT_YET")
                 .buyCount(0)
-                .cover("https://profile.csdnimg.cn/2/6/8/2_weixin_43250266")
+                .cover("https://img9.doubanio.com/view/ark_article_cover/retina/public/15233695.jpg?v=0")
                 .createTime(new Date())
                 .updateTime(new Date())
                 .showFlag(false)
@@ -253,6 +254,45 @@ public class ShareServiceImpl implements ShareService {
         );
         return share;
         }
+
+    @Override
+    public List<Share> myContribute(UserDTO userDTO) {
+        Example example = new Example(Share.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("userId",userDTO.getId());
+        List<Share> shareList = this.shareMapper.selectByExample(example);
+        return shareList;
+    }
+
+    @Override
+    public List<Share> queryMy(UserDTO userDTO) {
+        Example example = new Example(MidUserShare.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("userId",userDTO.getId());
+        List<MidUserShare> midUserShares =  midUserShareMapper.selectByExample(example);
+        List<Share> shareList = new ArrayList<>();
+        midUserShares.stream().forEach(
+                midUserShare -> {
+                    Share share = shareMapper.selectByPrimaryKey(Share.builder().id(midUserShare.getShareId()).build());
+                    shareList.add(share);
+                }
+        );
+        return shareList;
+    }
+
+    @Override
+    public List<Share> getUnAudit() {
+        Example example = new Example(Share.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("auditStatus","NOT_YET");
+        List<Share> shareList = this.shareMapper.selectByExample(example);
+        if (shareList.size() == 0){
+            throw new IllegalArgumentException("没有待审核数据");
+        }else {
+            return shareList;
+        }
+    }
+
     /**
      * 将统一的返回响应结果转换为UserDTO类型
      * @param responseDTO

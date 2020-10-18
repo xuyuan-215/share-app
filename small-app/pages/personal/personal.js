@@ -1,8 +1,8 @@
 // pages/personal/personal.js
 
 const app = getApp();
-const API = require('../../utils/request.js')
-
+const API = require('../../utils/request.js');
+const dateUtil = require('../../utils/util')
 Page({
 
   /**
@@ -10,7 +10,8 @@ Page({
    */
   data: {
     userInfo:null,
-    isSignin: 0
+    isSignin: 0,
+    userRole: null
   },
 
   /**
@@ -31,7 +32,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // const that = this
+    // API.login({
+    //   wxId: app.globalData.wxId,
+    //   wxNickName: app.globalData.userInfo.nickName,
+    //   avatar: app.globalData.userInfo.avatarUrl
+    // }).then( res =>{
+    //   const request = JSON.parse(res)
+      
+    //   app.globalData.user = request.user
+    //   console.log(request);
+    //   app.globalData.token = request.token.token
+    //   wx.setStorageSync('user', app.globalData.user)
+    //   wx.setStorageSync('token', app.globalData.token)
+    //   that.setData({
+    //     userInfo:app.globalData.user,
+    //     isSignin: request.isUserSignin
+    //   })
+    // })
   },
 
   /**
@@ -78,15 +96,14 @@ Page({
         wx.request({
           url: 'https://api.weixin.qq.com/sns/jscode2session',
           data:{
-            appid: 'wxb5ff498b8a0a76ad',
-            secret: '3c126b322a8fce09aa815729d66a748f',
+            appid: 'wxc9118718c860e9c6',
+            secret: '3f59d0b81cf4af137582aaa0d58159fd',
             js_code: res.code,
             grant_type: 'authorization_code'
           },
 
           success: res =>{
               app.globalData.wxId = res.data.openid                
-
           wx.getUserInfo({
           success: function(res) {
             console.log("昵称是:" + res.userInfo.nickName)
@@ -98,17 +115,18 @@ Page({
               avatar: app.globalData.userInfo.avatarUrl
             }).then( res =>{
               const request = JSON.parse(res)
+              const time = dateUtil.formatTimeTwo(request.token.expirationTime,'Y-M-D h:m:s')
               
               app.globalData.user = request.user
               app.globalData.token = request.token.token
-              console.log(request);
-              
               wx.setStorageSync('user', app.globalData.user)
               wx.setStorageSync('token', app.globalData.token)
               that.setData({
                 userInfo:app.globalData.user,
-                isSignin: request.isUserSignin
+                isSignin: request.isUserSignin,
+                userRole: request.token.role
               })
+              
             })
           
           }
@@ -133,21 +151,26 @@ Page({
     })
   },
   myDuihuan(){  
-    console.log(wx.getStorageSync('user'));   
+    wx.navigateTo({
+      url: '../myDuihuan/myDuihuan'
+    })
   },
   signIn(){
     API.signIn({
       userId: wx.getStorageSync('user').id
     }).then(res => {
       const req = JSON.parse(res)      
+      console.log(req);
       if(req.code == 200){
         wx.showToast({
           title: '签到成功',
           icon: "success",
           tx: '签到成功，记得每天都要来哦'
+
         })
         this.setData({
-          isSignin: 1
+          isSignin: 1,
+          userInfo: res.data
         })
       }else {
         wx.showModal({
@@ -156,6 +179,21 @@ Page({
           content: '今天已经签到过了哦'
         })
       }
+    })
+  },
+  jifenLog(){
+    wx.navigateTo({
+      url: '../jifenLog/jifenLog',
+    })
+  },
+  myContribute(){
+    wx.navigateTo({
+      url: '../myContribute/myContribute',
+    })
+  },
+  audit(){
+    wx.navigateTo({
+      url: '../audit/audit',
     })
   }
 })

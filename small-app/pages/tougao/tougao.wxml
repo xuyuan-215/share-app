@@ -1,7 +1,7 @@
 <!--pages/tougao/tougao.wxml-->
 <view class="container">
   <text class="description">
-    说明：投稿审核通过会有积分奖励：资源被下载会有积分奖励；提交的资源不得包括广告、侵权信息，百度网盘的话一定要带地址哦
+   欢迎你来投稿
   </text>
   <form bindsubmit="formSubmit" class="label-list">
     <view class="label-list">
