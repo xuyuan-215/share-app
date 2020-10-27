@@ -3,7 +3,7 @@
 
 [[_overview]]
 == Overview
-github地址 https://github.com/xuyuan-215/share-app
+github地址 https://github.com/48038411/micro-service/share-app
 
 
 === Version information
@@ -13,8 +13,8 @@ __Version__ : API V1.0
 
 === Contact information
 [%hardbreaks]
-__Contact__ : 许源
-__Contact Email__ : 2414704025@qq.com
+__Contact__ : 郭瑞昌
+__Contact Email__ : 48038411@qq.com
 
 
 === License information
@@ -263,6 +263,50 @@ __required__|id|integer (int32)
 [[_917a6a0ad3b9cec276900e3a86586a07]]
 === 公告接口
 Notice Controller
+
+
+[[_addusingpost]]
+==== 新增公告
+....
+POST /notice/add
+....
+
+
+===== Description
+新增公告
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**noticeDTO** +
+__required__|noticeDTO|<<_noticedto,NoticeDTO>>
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_fa86f1a57d6f758a93cb33b59c015654,公告>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `*/*`
 
 
 [[_gettopnoticeusingget]]
@@ -561,6 +605,40 @@ __optional__|title|string|
 Share Admin Controller
 
 
+[[_listusingpost]]
+==== 查询未审核的资源
+....
+POST /admin/shares/audit/list
+....
+
+
+===== Description
+查询未审核的资源
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|< <<_c31f48f84ef207e66a03c015a7243b43,分享>> > array
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `*/*`
+
+
 [[_auditusingput]]
 ==== 审核接口
 ....
@@ -635,6 +713,17 @@ __optional__|integer (int32)
 __optional__|boolean
 |**done** +
 __optional__|boolean
+|===
+
+
+[[_noticedto]]
+=== NoticeDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**content** +
+__optional__|string
 |===
 
 

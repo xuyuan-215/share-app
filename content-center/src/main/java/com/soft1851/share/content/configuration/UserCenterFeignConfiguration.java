@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 /**
  * 描述:
  *
- * @author：
+ * @author：Guorc
  * @create 2020-09-30 10:15
  */
 public class UserCenterFeignConfiguration {

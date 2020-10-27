@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.Collections;
 
 /**
- * @author
+ * @author Guorc
  */
 @Configuration
 @EnableSwagger2
@@ -24,7 +24,7 @@ public class SwaggerConfiguration {
                 "github地址 https://github.com/xuyuan-215/share-app",
                 "API V1.0",
                 "Terms of service",
-                new Contact("许源", "https://xuyuan.cn", "2414704025@qq.com"),
+                new Contact("许源", "https://guoruichang.cn", "82043420@qq.com"),
                 "Apache", "http://www.apache.org/", Collections.emptyList());
 
     }

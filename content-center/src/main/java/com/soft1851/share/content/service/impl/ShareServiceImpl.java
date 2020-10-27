@@ -7,6 +7,7 @@ import com.github.pagehelper.PageInfo;
 import com.soft1851.share.content.dao.MidUserShareMapper;
 import com.soft1851.share.content.dao.ShareMapper;
 import com.soft1851.share.content.domain.dto.*;
+import com.soft1851.share.content.domain.entity.BonusEventLog;
 import com.soft1851.share.content.domain.entity.MidUserShare;
 import com.soft1851.share.content.domain.entity.Share;
 import com.soft1851.share.content.domain.enums.AuditStatusEnum;
@@ -32,7 +33,7 @@ import java.util.stream.Collectors;
 /**
  * 描述:
  *
- * @author：
+ * @author：Guorc
  * @create 2020-09-30 7:51
  */
 @Service
@@ -51,6 +52,11 @@ public class ShareServiceImpl implements ShareService {
         Share share = this.shareMapper.selectByPrimaryKey(id);
         // 获得发布人id
         Integer userId = share.getUserId();
+
+        // 1. 代码不可读
+        // 2. 复杂的url难以维护：https://user-center/s?ie={ie}&f={f}&rsv_bp=1&rsv_idx=1&tn=baidu&wd=a&rsv_pq=c86459bd002cfbaa&rsv_t=edb19hb%2BvO%2BTySu8dtmbl%2F9dCK%2FIgdyUX%2BxuFYuE0G08aHH5FkeP3n3BXxw&rqlang=cn&rsv_enter=1&rsv_sug3=1&rsv_sug2=0&inputT=611&rsv_sug4=611
+        // 3. 难以相应需求的变化，变化很没有幸福感
+        // 4. 编程体验不统一
         ResponseDTO responseDTO = this.userCenterFeignClient.findUserById(userId);
         UserDTO userDTO = convert(responseDTO);
 
@@ -74,11 +80,10 @@ public class ShareServiceImpl implements ShareService {
                 .downloadUrl(shareRequestDTO.getDownloadUrl())
                 .auditStatus("NOT_YET")
                 .buyCount(0)
-                .cover("https://img9.doubanio.com/view/ark_article_cover/retina/public/15233695.jpg?v=0")
+                .cover("https://profile.csdnimg.cn/2/6/8/2_weixin_43250266")
                 .createTime(new Date())
                 .updateTime(new Date())
                 .showFlag(false)
-                .reason("test")
                 .build();
         return shareMapper.insert(share);
     }
@@ -95,11 +100,13 @@ public class ShareServiceImpl implements ShareService {
         if (StringUtil.isNotEmpty(title)) {
             criteria.andLike("title", "%" + title + "%");
         }
+        //显示的才显示,审核通过的才显示
+        criteria.andEqualTo("showFlag",1);
+        criteria.andEqualTo("auditStatus","PASS");
         //执行按条件查询
         List<Share> shares = this.shareMapper.selectByExample(example);
         //处理后的Share数据列表
         List<Share> shareDeal;
-        System.out.println(userId);
         // 1.如果用户未登录，那么downloadUrl全部设为null
         if (userId == null) {
             shareDeal = shares.stream()
@@ -153,7 +160,9 @@ public class ShareServiceImpl implements ShareService {
         this.shareMapper.updateByPrimaryKey(share);
         //3,如果是PASS,那么发送消息给rocketmq，让用户中心去消费，并为发布人添加积分
         if (AuditStatusEnum.PASS.equals(shareAuditDTO.getAuditStatusEnum())) {
-            this.midUserShareMapper.insertSelective(MidUserShare.builder().shareId(share.getId()).userId(share.getUserId()).build());
+            share.setShowFlag(true);
+            this.shareMapper.updateByPrimaryKey(share);
+            //this.midUserShareMapper.insertSelective(MidUserShare.builder().shareId(share.getId()).userId(share.getUserId()).build());
             long nowTime = System.currentTimeMillis();
             //1，rocketmq异步实现加积分
             this.rocketMQTemplate.convertAndSend(
@@ -256,15 +265,6 @@ public class ShareServiceImpl implements ShareService {
         }
 
     @Override
-    public List<Share> myContribute(UserDTO userDTO) {
-        Example example = new Example(Share.class);
-        Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("userId",userDTO.getId());
-        List<Share> shareList = this.shareMapper.selectByExample(example);
-        return shareList;
-    }
-
-    @Override
     public List<Share> queryMy(UserDTO userDTO) {
         Example example = new Example(MidUserShare.class);
         Example.Criteria criteria = example.createCriteria();
@@ -277,6 +277,15 @@ public class ShareServiceImpl implements ShareService {
                     shareList.add(share);
                 }
         );
+        return shareList;
+    }
+
+    @Override
+    public List<Share> myContribute(UserDTO userDTO) {
+        Example example = new Example(Share.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("userId",userDTO.getId());
+        List<Share> shareList = this.shareMapper.selectByExample(example);
         return shareList;
     }
 

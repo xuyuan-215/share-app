@@ -6,7 +6,7 @@ import tk.mybatis.mapper.common.Mapper;
 /**
  * 描述:
  *
- * @author：
+ * @author：Guorc
  * @create 2020-09-27 11:42
  */
 public interface NoticeMapper extends Mapper<Notice> {

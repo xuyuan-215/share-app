@@ -1,7 +1,6 @@
 package com.soft1851.share.content;
 
 import com.purgeteam.dispose.starter.annotation.EnableGlobalDispose;
-import com.soft1851.share.content.configuration.UserCenterFeignConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -15,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import tk.mybatis.spring.annotation.MapperScan;
 
 /**
- * @author
+ * @author Guorc
  */
 @SpringBootApplication
 @MapperScan(basePackages = "com.soft1851.share.content.dao")

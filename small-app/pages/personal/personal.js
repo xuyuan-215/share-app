@@ -96,8 +96,8 @@ Page({
         wx.request({
           url: 'https://api.weixin.qq.com/sns/jscode2session',
           data:{
-            appid: 'wxc9118718c860e9c6',
-            secret: '3f59d0b81cf4af137582aaa0d58159fd',
+            appid: 'wx05dcf498882dad7a',
+            secret: '17e0608a74fe35fdfe66bd5efb6fc8a2',
             js_code: res.code,
             grant_type: 'authorization_code'
           },
@@ -144,8 +144,7 @@ Page({
     wx.getSetting({
       success(res) {
         if(res.authSetting['scope.userInfo']) {
-          console.log("微信授权")
-          
+          console.log("微信授权")       
         }
       }
     })
@@ -194,6 +193,11 @@ Page({
   audit(){
     wx.navigateTo({
       url: '../audit/audit',
+    })
+  },
+  notice(){
+    wx.navigateTo({
+      url: '../notice/notice',
     })
   }
 })

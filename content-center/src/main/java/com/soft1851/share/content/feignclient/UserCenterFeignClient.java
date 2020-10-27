@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * 描述:
  *
- * @author：
+ * @author：Guorc
  * @create 2020-09-29 22:41
  */
 @FeignClient(name = "user-center",configuration = UserCenterFeignConfiguration.class)

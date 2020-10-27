@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 描述:
  *
- * @author：
+ * @author：Guorc
  * @create 2020-09-30 7:52
  */
 @Slf4j
@@ -76,18 +76,16 @@ public class ShareController {
         System.out.println(exchangeDTO + ">>>>>>>>>>>>");
         return this.shareService.exchange(exchangeDTO);
     }
-    @PostMapping("/myContribute")
-    @CheckLogin
-    @ApiOperation(value = "查询我的投稿",notes = "查询我的投稿")
-    public List<Share> myContribue(@RequestBody UserDTO userDTO){
-        return this.shareService.myContribute(userDTO);
-    }
     @PostMapping("/myShare")
     @CheckLogin
     @ApiOperation(value = "查询我的兑换",notes = "查询我的兑换")
     public List<Share> getMy(@RequestBody UserDTO userDTO){
         return this.shareService.queryMy(userDTO);
     }
-
-
+    @PostMapping("/myContribute")
+    @CheckLogin
+    @ApiOperation(value = "查询我的投稿",notes = "查询我的投稿")
+    public List<Share> myContribue(@RequestBody UserDTO userDTO){
+        return this.shareService.myContribute(userDTO);
+    }
 }

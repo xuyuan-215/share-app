@@ -4,10 +4,11 @@ import com.github.pagehelper.PageInfo;
 import com.soft1851.share.content.domain.dto.*;
 import com.soft1851.share.content.domain.entity.Share;
 
+import java.nio.file.attribute.UserDefinedFileAttributeView;
 import java.util.List;
 
 /**
- * @author
+ * @author Guorc
  */
 public interface ShareService {
     /**
@@ -52,20 +53,20 @@ public interface ShareService {
      * @return Share
      */
     Share exchange(ExchangeDTO exchangeDTO);
+
+    /**
+     * 根据用户id查询该用户兑换的资源
+     * @param userDTO
+     * @return
+     */
+    List<Share> queryMy(UserDTO userDTO);
+
     /**
      * 根据用户id查询该用户投稿的资源
      * @param userDTO
      * @return
      */
     List<Share> myContribute(UserDTO userDTO);
-    /**
-     * 我的兑换
-     * @param userDTO
-     * @return
-     */
-
-    List<Share> queryMy(UserDTO userDTO);
-
 
     /**
      * 查询未审核的帖子

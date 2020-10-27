@@ -6,7 +6,7 @@ import tk.mybatis.mapper.common.Mapper;
 /**
  * 描述:
  *
- * @author：
+ * @author：Guorc
  * @create 2020-10-07 14:18
  */
 public interface BonusEventLogMapper extends Mapper<BonusEventLog> {

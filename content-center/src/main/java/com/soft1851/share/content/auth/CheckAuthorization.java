@@ -5,7 +5,7 @@ import java.lang.annotation.RetentionPolicy;
 
 /**
  * 鉴权注解
- * @author
+ * @author Guorc
  */
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CheckAuthorization {

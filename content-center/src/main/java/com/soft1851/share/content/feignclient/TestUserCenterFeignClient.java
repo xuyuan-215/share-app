@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * @author
+ * @author Guorc
  */
 @FeignClient(name = "user-center")
 public interface TestUserCenterFeignClient {

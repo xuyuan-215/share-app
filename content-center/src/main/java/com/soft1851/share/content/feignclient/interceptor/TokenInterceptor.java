@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 描述:
  *
- * @author：
+ * @author：Guorc
  * @create 2020-10-13 15:45
  */
 public class TokenInterceptor implements RequestInterceptor {

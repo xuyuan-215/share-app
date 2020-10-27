@@ -546,7 +546,8 @@ table.CodeRay td.code>pre{padding:0}
 </li>
 <li><a href="#_917a6a0ad3b9cec276900e3a86586a07">2.2. 公告接口</a>
 <ul class="sectlevel3">
-<li><a href="#_gettopnoticeusingget">2.2.1. 查询最新一条公告</a></li>
+<li><a href="#_addusingpost">2.2.1. 新增公告</a></li>
+<li><a href="#_gettopnoticeusingget">2.2.2. 查询最新一条公告</a></li>
 </ul>
 </li>
 <li><a href="#_3ecef281a805f36ea4142625eefacc12">2.3. 分享接口</a>
@@ -561,7 +562,8 @@ table.CodeRay td.code>pre{padding:0}
 </li>
 <li><a href="#_a2d9ce34f0e8e13ec795f30d3a8212de">2.4. 审核接口</a>
 <ul class="sectlevel3">
-<li><a href="#_auditusingput">2.4.1. 审核接口</a></li>
+<li><a href="#_listusingpost">2.4.1. 查询未审核的资源</a></li>
+<li><a href="#_auditusingput">2.4.2. 审核接口</a></li>
 </ul>
 </li>
 </ul>
@@ -570,14 +572,15 @@ table.CodeRay td.code>pre{padding:0}
 <ul class="sectlevel2">
 <li><a href="#_exchangedto">3.1. ExchangeDTO</a></li>
 <li><a href="#_8517175d4389aafb9cbba105ba26d07a">3.2. ListenableFuture«ResponseEntity«string»»</a></li>
-<li><a href="#_serviceinstance">3.3. ServiceInstance</a></li>
-<li><a href="#_shareauditdto">3.4. ShareAuditDTO</a></li>
-<li><a href="#_sharedto">3.5. ShareDTO</a></li>
-<li><a href="#_sharerequestdto">3.6. ShareRequestDTO</a></li>
-<li><a href="#_uri">3.7. URI</a></li>
-<li><a href="#_userdto">3.8. UserDTO</a></li>
-<li><a href="#_fa86f1a57d6f758a93cb33b59c015654">3.9. 公告</a></li>
-<li><a href="#_c31f48f84ef207e66a03c015a7243b43">3.10. 分享</a></li>
+<li><a href="#_noticedto">3.3. NoticeDTO</a></li>
+<li><a href="#_serviceinstance">3.4. ServiceInstance</a></li>
+<li><a href="#_shareauditdto">3.5. ShareAuditDTO</a></li>
+<li><a href="#_sharedto">3.6. ShareDTO</a></li>
+<li><a href="#_sharerequestdto">3.7. ShareRequestDTO</a></li>
+<li><a href="#_uri">3.8. URI</a></li>
+<li><a href="#_userdto">3.9. UserDTO</a></li>
+<li><a href="#_fa86f1a57d6f758a93cb33b59c015654">3.10. 公告</a></li>
+<li><a href="#_c31f48f84ef207e66a03c015a7243b43">3.11. 分享</a></li>
 </ul>
 </li>
 </ul>
@@ -588,7 +591,7 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="_overview"><a class="anchor" href="#_overview"></a><a class="link" href="#_overview">1. Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>github地址 <a href="https://github.com/xuyuan-215/share-app" class="bare">https://github.com/xuyuan-215/share-app</a></p>
+<p>github地址 <a href="https://github.com/48038411/micro-service/share-app" class="bare">https://github.com/48038411/micro-service/share-app</a></p>
 </div>
 <div class="sect2">
 <h3 id="_version_information"><a class="anchor" href="#_version_information"></a><a class="link" href="#_version_information">1.1. Version information</a></h3>
@@ -599,8 +602,8 @@ table.CodeRay td.code>pre{padding:0}
 <div class="sect2">
 <h3 id="_contact_information"><a class="anchor" href="#_contact_information"></a><a class="link" href="#_contact_information">1.2. Contact information</a></h3>
 <div class="paragraph">
-<p><em>Contact</em> : 许源<br>
-<em>Contact Email</em> : <a href="mailto:2414704025@qq.com">2414704025@qq.com</a></p>
+<p><em>Contact</em> : 郭瑞昌<br>
+<em>Contact Email</em> : <a href="mailto:48038411@qq.com">48038411@qq.com</a></p>
 </div>
 </div>
 <div class="sect2">
@@ -1176,20 +1179,126 @@ table.CodeRay td.code>pre{padding:0}
 <p>Notice Controller</p>
 </div>
 <div class="sect3">
-<h4 id="_gettopnoticeusingget"><a class="anchor" href="#_gettopnoticeusingget"></a><a class="link" href="#_gettopnoticeusingget">2.2.1. 查询最新一条公告</a></h4>
+<h4 id="_addusingpost"><a class="anchor" href="#_addusingpost"></a><a class="link" href="#_addusingpost">2.2.1. 新增公告</a></h4>
+<div class="literalblock">
+<div class="content">
+<pre>POST /notice/add</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h5>
+<div class="paragraph">
+<p>新增公告</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_parameters_4"><a class="anchor" href="#_parameters_4"></a><a class="link" href="#_parameters_4">Parameters</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>noticeDTO</strong><br>
+<em>required</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">noticeDTO</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_noticedto">NoticeDTO</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_responses_8"><a class="anchor" href="#_responses_8"></a><a class="link" href="#_responses_8">Responses</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 70%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">HTTP Code</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_fa86f1a57d6f758a93cb33b59c015654">公告</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Created</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_consumes"><a class="anchor" href="#_consumes"></a><a class="link" href="#_consumes">Consumes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/json</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_produces_8"><a class="anchor" href="#_produces_8"></a><a class="link" href="#_produces_8">Produces</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>/</strong></code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_gettopnoticeusingget"><a class="anchor" href="#_gettopnoticeusingget"></a><a class="link" href="#_gettopnoticeusingget">2.2.2. 查询最新一条公告</a></h4>
 <div class="literalblock">
 <div class="content">
 <pre>GET /notice/one</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_description"><a class="anchor" href="#_description"></a><a class="link" href="#_description">Description</a></h5>
+<h5 id="_description_2"><a class="anchor" href="#_description_2"></a><a class="link" href="#_description_2">Description</a></h5>
 <div class="paragraph">
 <p>查询最新一条公告</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_responses_8"><a class="anchor" href="#_responses_8"></a><a class="link" href="#_responses_8">Responses</a></h5>
+<h5 id="_responses_9"><a class="anchor" href="#_responses_9"></a><a class="link" href="#_responses_9">Responses</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 10%;">
@@ -1228,7 +1337,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_produces_8"><a class="anchor" href="#_produces_8"></a><a class="link" href="#_produces_8">Produces</a></h5>
+<h5 id="_produces_9"><a class="anchor" href="#_produces_9"></a><a class="link" href="#_produces_9">Produces</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1252,13 +1361,13 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect4">
-<h5 id="_description_2"><a class="anchor" href="#_description_2"></a><a class="link" href="#_description_2">Description</a></h5>
+<h5 id="_description_3"><a class="anchor" href="#_description_3"></a><a class="link" href="#_description_3">Description</a></h5>
 <div class="paragraph">
 <p>投稿接口</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_parameters_4"><a class="anchor" href="#_parameters_4"></a><a class="link" href="#_parameters_4">Parameters</a></h5>
+<h5 id="_parameters_5"><a class="anchor" href="#_parameters_5"></a><a class="link" href="#_parameters_5">Parameters</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1286,112 +1395,6 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_responses_9"><a class="anchor" href="#_responses_9"></a><a class="link" href="#_responses_9">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer (int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Created</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_consumes"><a class="anchor" href="#_consumes"></a><a class="link" href="#_consumes">Consumes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/json</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_produces_9"><a class="anchor" href="#_produces_9"></a><a class="link" href="#_produces_9">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_exchangeusingpost"><a class="anchor" href="#_exchangeusingpost"></a><a class="link" href="#_exchangeusingpost">2.3.2. 兑换接口</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>POST /shares/exchange</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_description_3"><a class="anchor" href="#_description_3"></a><a class="link" href="#_description_3">Description</a></h5>
-<div class="paragraph">
-<p>兑换接口</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_5"><a class="anchor" href="#_parameters_5"></a><a class="link" href="#_parameters_5">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>exchangeDTO</strong><br>
-<em>required</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">exchangeDTO</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_exchangedto">ExchangeDTO</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
 <h5 id="_responses_10"><a class="anchor" href="#_responses_10"></a><a class="link" href="#_responses_10">Responses</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1410,7 +1413,7 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_c31f48f84ef207e66a03c015a7243b43">分享</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer (int32)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -1457,16 +1460,16 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mycontribueusingpost"><a class="anchor" href="#_mycontribueusingpost"></a><a class="link" href="#_mycontribueusingpost">2.3.3. 查询我的投稿</a></h4>
+<h4 id="_exchangeusingpost"><a class="anchor" href="#_exchangeusingpost"></a><a class="link" href="#_exchangeusingpost">2.3.2. 兑换接口</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>POST /shares/myContribute</pre>
+<pre>POST /shares/exchange</pre>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_description_4"><a class="anchor" href="#_description_4"></a><a class="link" href="#_description_4">Description</a></h5>
 <div class="paragraph">
-<p>查询我的投稿</p>
+<p>兑换接口</p>
 </div>
 </div>
 <div class="sect4">
@@ -1489,10 +1492,10 @@ table.CodeRay td.code>pre{padding:0}
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>userDTO</strong><br>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>exchangeDTO</strong><br>
 <em>required</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">userDTO</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_userdto">UserDTO</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">exchangeDTO</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_exchangedto">ExchangeDTO</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1516,7 +1519,7 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; <a href="#_c31f48f84ef207e66a03c015a7243b43">分享</a> &gt; array</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_c31f48f84ef207e66a03c015a7243b43">分享</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -1563,16 +1566,16 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect3">
-<h4 id="_getmyusingpost"><a class="anchor" href="#_getmyusingpost"></a><a class="link" href="#_getmyusingpost">2.3.4. 查询我的兑换</a></h4>
+<h4 id="_mycontribueusingpost"><a class="anchor" href="#_mycontribueusingpost"></a><a class="link" href="#_mycontribueusingpost">2.3.3. 查询我的投稿</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>POST /shares/myShare</pre>
+<pre>POST /shares/myContribute</pre>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_description_5"><a class="anchor" href="#_description_5"></a><a class="link" href="#_description_5">Description</a></h5>
 <div class="paragraph">
-<p>查询我的兑换</p>
+<p>查询我的投稿</p>
 </div>
 </div>
 <div class="sect4">
@@ -1669,6 +1672,112 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect3">
+<h4 id="_getmyusingpost"><a class="anchor" href="#_getmyusingpost"></a><a class="link" href="#_getmyusingpost">2.3.4. 查询我的兑换</a></h4>
+<div class="literalblock">
+<div class="content">
+<pre>POST /shares/myShare</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_description_6"><a class="anchor" href="#_description_6"></a><a class="link" href="#_description_6">Description</a></h5>
+<div class="paragraph">
+<p>查询我的兑换</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_parameters_8"><a class="anchor" href="#_parameters_8"></a><a class="link" href="#_parameters_8">Parameters</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>userDTO</strong><br>
+<em>required</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">userDTO</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_userdto">UserDTO</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_responses_13"><a class="anchor" href="#_responses_13"></a><a class="link" href="#_responses_13">Responses</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 70%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">HTTP Code</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; <a href="#_c31f48f84ef207e66a03c015a7243b43">分享</a> &gt; array</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Created</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_consumes_5"><a class="anchor" href="#_consumes_5"></a><a class="link" href="#_consumes_5">Consumes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/json</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_produces_13"><a class="anchor" href="#_produces_13"></a><a class="link" href="#_produces_13">Produces</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>/</strong></code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_getsharebyidusingget"><a class="anchor" href="#_getsharebyidusingget"></a><a class="link" href="#_getsharebyidusingget">2.3.5. 查询指定id的分享详情</a></h4>
 <div class="literalblock">
 <div class="content">
@@ -1676,13 +1785,13 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect4">
-<h5 id="_description_6"><a class="anchor" href="#_description_6"></a><a class="link" href="#_description_6">Description</a></h5>
+<h5 id="_description_7"><a class="anchor" href="#_description_7"></a><a class="link" href="#_description_7">Description</a></h5>
 <div class="paragraph">
 <p>查询指定id的分享详情</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_parameters_8"><a class="anchor" href="#_parameters_8"></a><a class="link" href="#_parameters_8">Parameters</a></h5>
+<h5 id="_parameters_9"><a class="anchor" href="#_parameters_9"></a><a class="link" href="#_parameters_9">Parameters</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1710,7 +1819,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_responses_13"><a class="anchor" href="#_responses_13"></a><a class="link" href="#_responses_13">Responses</a></h5>
+<h5 id="_responses_14"><a class="anchor" href="#_responses_14"></a><a class="link" href="#_responses_14">Responses</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 10%;">
@@ -1749,7 +1858,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_produces_13"><a class="anchor" href="#_produces_13"></a><a class="link" href="#_produces_13">Produces</a></h5>
+<h5 id="_produces_14"><a class="anchor" href="#_produces_14"></a><a class="link" href="#_produces_14">Produces</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1767,13 +1876,13 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect4">
-<h5 id="_description_7"><a class="anchor" href="#_description_7"></a><a class="link" href="#_description_7">Description</a></h5>
+<h5 id="_description_8"><a class="anchor" href="#_description_8"></a><a class="link" href="#_description_8">Description</a></h5>
 <div class="paragraph">
 <p>分享列表</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_parameters_9"><a class="anchor" href="#_parameters_9"></a><a class="link" href="#_parameters_9">Parameters</a></h5>
+<h5 id="_parameters_10"><a class="anchor" href="#_parameters_10"></a><a class="link" href="#_parameters_10">Parameters</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 10%;">
@@ -1828,7 +1937,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_responses_14"><a class="anchor" href="#_responses_14"></a><a class="link" href="#_responses_14">Responses</a></h5>
+<h5 id="_responses_15"><a class="anchor" href="#_responses_15"></a><a class="link" href="#_responses_15">Responses</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 10%;">
@@ -1867,7 +1976,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_produces_14"><a class="anchor" href="#_produces_14"></a><a class="link" href="#_produces_14">Produces</a></h5>
+<h5 id="_produces_15"><a class="anchor" href="#_produces_15"></a><a class="link" href="#_produces_15">Produces</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1884,20 +1993,98 @@ table.CodeRay td.code>pre{padding:0}
 <p>Share Admin Controller</p>
 </div>
 <div class="sect3">
-<h4 id="_auditusingput"><a class="anchor" href="#_auditusingput"></a><a class="link" href="#_auditusingput">2.4.1. 审核接口</a></h4>
+<h4 id="_listusingpost"><a class="anchor" href="#_listusingpost"></a><a class="link" href="#_listusingpost">2.4.1. 查询未审核的资源</a></h4>
+<div class="literalblock">
+<div class="content">
+<pre>POST /admin/shares/audit/list</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_description_9"><a class="anchor" href="#_description_9"></a><a class="link" href="#_description_9">Description</a></h5>
+<div class="paragraph">
+<p>查询未审核的资源</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_responses_16"><a class="anchor" href="#_responses_16"></a><a class="link" href="#_responses_16">Responses</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 70%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">HTTP Code</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; <a href="#_c31f48f84ef207e66a03c015a7243b43">分享</a> &gt; array</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Created</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_consumes_6"><a class="anchor" href="#_consumes_6"></a><a class="link" href="#_consumes_6">Consumes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/json</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_produces_16"><a class="anchor" href="#_produces_16"></a><a class="link" href="#_produces_16">Produces</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>/</strong></code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_auditusingput"><a class="anchor" href="#_auditusingput"></a><a class="link" href="#_auditusingput">2.4.2. 审核接口</a></h4>
 <div class="literalblock">
 <div class="content">
 <pre>PUT /admin/shares/audit/{id}</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_description_8"><a class="anchor" href="#_description_8"></a><a class="link" href="#_description_8">Description</a></h5>
+<h5 id="_description_10"><a class="anchor" href="#_description_10"></a><a class="link" href="#_description_10">Description</a></h5>
 <div class="paragraph">
 <p>审核接口</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_parameters_10"><a class="anchor" href="#_parameters_10"></a><a class="link" href="#_parameters_10">Parameters</a></h5>
+<h5 id="_parameters_11"><a class="anchor" href="#_parameters_11"></a><a class="link" href="#_parameters_11">Parameters</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1932,7 +2119,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_responses_15"><a class="anchor" href="#_responses_15"></a><a class="link" href="#_responses_15">Responses</a></h5>
+<h5 id="_responses_17"><a class="anchor" href="#_responses_17"></a><a class="link" href="#_responses_17">Responses</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 10%;">
@@ -1976,7 +2163,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect4">
-<h5 id="_consumes_5"><a class="anchor" href="#_consumes_5"></a><a class="link" href="#_consumes_5">Consumes</a></h5>
+<h5 id="_consumes_7"><a class="anchor" href="#_consumes_7"></a><a class="link" href="#_consumes_7">Consumes</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1986,7 +2173,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect4">
-<h5 id="_produces_15"><a class="anchor" href="#_produces_15"></a><a class="link" href="#_produces_15">Produces</a></h5>
+<h5 id="_produces_17"><a class="anchor" href="#_produces_17"></a><a class="link" href="#_produces_17">Produces</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2057,7 +2244,29 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect2">
-<h3 id="_serviceinstance"><a class="anchor" href="#_serviceinstance"></a><a class="link" href="#_serviceinstance">3.3. ServiceInstance</a></h3>
+<h3 id="_noticedto"><a class="anchor" href="#_noticedto"></a><a class="link" href="#_noticedto">3.3. NoticeDTO</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 42.8571%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>content</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_serviceinstance"><a class="anchor" href="#_serviceinstance"></a><a class="link" href="#_serviceinstance">3.4. ServiceInstance</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -2114,7 +2323,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect2">
-<h3 id="_shareauditdto"><a class="anchor" href="#_shareauditdto"></a><a class="link" href="#_shareauditdto">3.4. ShareAuditDTO</a></h3>
+<h3 id="_shareauditdto"><a class="anchor" href="#_shareauditdto"></a><a class="link" href="#_shareauditdto">3.5. ShareAuditDTO</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -2141,7 +2350,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect2">
-<h3 id="_sharedto"><a class="anchor" href="#_sharedto"></a><a class="link" href="#_sharedto">3.5. ShareDTO</a></h3>
+<h3 id="_sharedto"><a class="anchor" href="#_sharedto"></a><a class="link" href="#_sharedto">3.6. ShareDTO</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -2243,7 +2452,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect2">
-<h3 id="_sharerequestdto"><a class="anchor" href="#_sharerequestdto"></a><a class="link" href="#_sharerequestdto">3.6. ShareRequestDTO</a></h3>
+<h3 id="_sharerequestdto"><a class="anchor" href="#_sharerequestdto"></a><a class="link" href="#_sharerequestdto">3.7. ShareRequestDTO</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -2300,7 +2509,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect2">
-<h3 id="_uri"><a class="anchor" href="#_uri"></a><a class="link" href="#_uri">3.7. URI</a></h3>
+<h3 id="_uri"><a class="anchor" href="#_uri"></a><a class="link" href="#_uri">3.8. URI</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -2402,7 +2611,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect2">
-<h3 id="_userdto"><a class="anchor" href="#_userdto"></a><a class="link" href="#_userdto">3.8. UserDTO</a></h3>
+<h3 id="_userdto"><a class="anchor" href="#_userdto"></a><a class="link" href="#_userdto">3.9. UserDTO</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -2459,7 +2668,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect2">
-<h3 id="_fa86f1a57d6f758a93cb33b59c015654"><a class="anchor" href="#_fa86f1a57d6f758a93cb33b59c015654"></a><a class="link" href="#_fa86f1a57d6f758a93cb33b59c015654">3.9. 公告</a></h3>
+<h3 id="_fa86f1a57d6f758a93cb33b59c015654"><a class="anchor" href="#_fa86f1a57d6f758a93cb33b59c015654"></a><a class="link" href="#_fa86f1a57d6f758a93cb33b59c015654">3.10. 公告</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2502,7 +2711,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="sect2">
-<h3 id="_c31f48f84ef207e66a03c015a7243b43"><a class="anchor" href="#_c31f48f84ef207e66a03c015a7243b43"></a><a class="link" href="#_c31f48f84ef207e66a03c015a7243b43">3.10. 分享</a></h3>
+<h3 id="_c31f48f84ef207e66a03c015a7243b43"><a class="anchor" href="#_c31f48f84ef207e66a03c015a7243b43"></a><a class="link" href="#_c31f48f84ef207e66a03c015a7243b43">3.11. 分享</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2615,7 +2824,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-18 17:15:55 CST
+Last updated 2020-10-18 15:28:21 CST
 </div>
 </div>
 </body>

@@ -1,14 +1,15 @@
 // pages/audit/audit.js
 const API = require('../../utils/request')
-const { getUnAudit } = require('../../utils/request')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    auditList: null
+    auditList: null,
   },
+
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -73,22 +74,18 @@ Page({
   onShareAppMessage: function () {
 
   },
-  audit(){
-
-    // wx.request({
-    //   url: 'http://',//请求地址路径
-    //   data:'',//请求参数
-    //   method:"post/get",//请求方式
-    //   header:{//请求头
-    //     "content-type": "application/x-www-form-urlencoded"
-    //   },
-    //   success(res){
-    //     if(res.data.success){
-    //       console.log(res)
-    //     }else{
-    //       console.log(res)
-    //     }
-    //   }
-    // })
-  }
+  audit(e){
+    const share = e.currentTarget.dataset.item
+    wx.navigateTo({
+      url: '../../pages/auditDetail/auditDetail?share='+JSON.stringify(share),
+    })
+  },
+  goDetail(e) {
+    // 取出绑定对象
+    console.log(e)
+    var share = e.currentTarget.dataset.item
+    wx.navigateTo({
+        url: '../shareDetail/shareDetail?share=' + JSON.stringify(share),
+    })
+},
 })

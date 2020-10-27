@@ -8,9 +8,9 @@ bindtap="changeTab">使用说明</view>
 </view>
 <!-- tab1 发现页 -->
 <view class="share-list" wx:if="{{tab == 0}}">
-  <!-- <view class="nocice">
+  <view class="nocice">
 <text>{{notice.content}}</text>
-</view> -->
+</view>
 <view class="search">
 <input placeholder="请输入搜索内容" confirm-type="search" class="search-input" bindinput="search" placeholder-class="placeholder-class"></input>
 </view>
@@ -23,7 +23,6 @@ bindtap="changeTab">使用说明</view>
 <view class="item-main" data-item="{{share}}" bindtap="goDetail">
 <text class="item-title">{{share.title}}</text>
 <text class="item-summary">{{share.author}}</text>
-<text class="item-summary">价格：{{share.price}}</text>
 </view>
 <view class="item-duihuan">
 <text data-item="{{share}}" bindtap="duihuan" wx:if="{{share.downloadUrl == null}}">兑换</text>
@@ -33,21 +32,16 @@ bindtap="changeTab">使用说明</view>
 </view>
 <!-- tab2 使用说明 -->
 <view wx:else class="description">
-  <text>资源均为免费,段焕后即可查看下载地址：点击我的->我的兑换，即可查看，下载兑换过的资源。</text>
-
+<text>资源均为免费，兑换后可查看下载地址：点击我的-我的兑换，即可查看下载兑换后的资源。</text>
 <view>
-<text class="dicription-title">获得积分的方式</text>
-<view>> 每日签到</view>
-<view>> 投稿</view>
-<view>> 转发</view>
-<view>> 提建议、意见</view>
+  <text  class="description-title">获得积分的方式</text>
+  <view>每日签到</view>
+  <view>投稿</view>
+<view>转发</view>
+<view>提建议，意见</view>
 </view>
-
 <view>
-<text class="dicription-title">深入交流</text>
-<view>> 技术交流QQ群：xxxxxx</view>
-<view>> 技术交流微信群：叫我微信，注明加微信群</view>
-<view>> xy</view>
+  <text class="description-title">公众号(技术干货分享)</text>
 </view>
 </view>
 </view>

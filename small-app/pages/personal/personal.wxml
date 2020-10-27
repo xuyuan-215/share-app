@@ -3,7 +3,7 @@
 
 <!-- 未登录 -->
 <view class="no-user" wx:if="{{userInfo === null}}">
-<image src="../../images/yong.png"></image>
+<image src="../../images/yonghu.png"></image>
 <view>登录,享受技术之旅吧!</view>
 <button class="btn" open-type="getUserInfo" bindtap="weixinLogin" bindgetuserinfo="bindgetuserinfo">微信登录</button>
 </view>
@@ -19,6 +19,7 @@
 </view>
 <view class="my-manage">
 <view class="manage-item" bindtap="audit" wx:if="{{userRole == 'admin'}}">待审核资源</view>
+<view class="manage-item" bindtap="notice" wx:if="{{userRole == 'admin'}}">发布公告</view>
 <view class="manage-item" bindtap="myDuihuan">我的兑换</view>
 <view class="manage-item" bindtap="jifenLog">积分明细</view>
 <view class="manage-item" bindtap="myContribute">我的投稿</view>
